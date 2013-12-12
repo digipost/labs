@@ -1,0 +1,20 @@
+{
+  "browser": true,
+  "newcap": true,
+  "noempty": true,
+  "nonew": true,
+  "onevar": false,
+  "plusplus": false,
+  "trailing": true,
+  "eqeqeq": true,
+  "forin": true,
+  "latedef": true,
+  "undef": true,
+  "unused": true,
+  "es3": true,
+
+  "quotmark": "single",
+  "maxlen": 120,
+  "maxdepth": 3,
+  "maxparams": 5
+}

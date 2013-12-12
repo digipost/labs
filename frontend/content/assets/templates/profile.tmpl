@@ -1,0 +1,26 @@
+<div class="profile animated fadeInDown">
+    <h1>
+        <%unsafe dp.item.avatar({ avatar: profile.avatar, name: profile.name }, 400) %>
+        <%= profile.name %>
+    </h1>
+    <h2 class="meta"><i class="fa fa-<%= profile.icon %>"></i> <%= profile.title %></h2>
+
+    <% if (profile.expertise) { %>
+        <h2>Spør meg om</h2>
+        <p><%= profile.expertise %></p>
+    <% } %>
+
+    <% if (profile.contacts.length > 0) { %>
+        <div class="body">
+            <% _.each(profile.contacts, function(contact){ %>
+            <div class="contact"><i class="fa fa-<%= contact.icon %>"></i><a href="<%= contact.url %>"><%= contact.name %></a></div>
+            <% }); %>
+        </div>
+    <% } %>
+
+    <% if (profile.about) { %>
+        <p class="body"><%= profile.about %></p>
+    <% } %>
+
+    <div class="clear"></div>
+</div>

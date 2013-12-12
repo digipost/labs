@@ -1,0 +1,12 @@
+<p><input type="text" class="inputfield title" placeholder="Jeg synes at Digipost skal..." value="<%= item.title %>"></p>
+<p><textarea placeholder="Beskriv din idé..." class="inputfield tall body"><%= item.source %></textarea></p>
+<p><select class="inputfield select-status">
+    <option value="published">Ny</option>
+    <option value="started">Påbegynt</option>
+    <option value="finished">Ferdig</option>
+    <option value="closed">Stengt</option>
+</select></p>
+<p>
+    <a href="#" class="button button2 save"><i class="fa fa-ok"></i> Publiser din idé</a>
+    <a href="#!/admin" class="button button5 close"><i class="fa fa-remove"></i> Avbryt</a>
+</p>

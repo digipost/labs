@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+td, th {
+    padding: .8em .5em .8em .5em;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+thead {
+    text-align: left;
+}
+
+
+table .title {
+    width: 80%;
+}

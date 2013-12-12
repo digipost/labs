@@ -1,0 +1,11 @@
+<div class="box-in-box animated fadeInDown">
+    <div class="comments">
+        <h1>Siste kommentarer</h1>
+        <h3 class="section"><span>
+            <i class="fa fa-comment"></i> <strong class="comments-count"><%= comments.length || 'Ingen' %></strong>
+            <%= comments.length === 1 ? 'kommentar' : 'kommentarer' %>
+        </span></h3>
+
+        <div class="comments-list"></div>
+    </div>
+</div>

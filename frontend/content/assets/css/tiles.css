@@ -1,0 +1,214 @@
+.container {
+  border: 10px solid transparent;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tile {
+  display: block;
+  float: left;
+  width: 33.3333333%;
+  color: #4D4F53;
+  border: 10px solid #eceef1;
+  position: relative;
+  overflow: hidden;
+}
+
+.tile-end {
+  float: right;
+}
+
+@media (max-width: 1000px) {
+  .container { max-width: 900px; }
+  .tile { width: 50%; }
+}
+
+@media (max-width: 800px) {
+  .container { max-width: 750px; }
+  .tile { width: 50%; }
+}
+
+@media (max-width: 700px) {
+    .container { max-width: 400px; }
+    .tile { width: 100%; }
+}
+
+a.tile:hover {
+  border-color: #eceef1;
+}
+
+.tile-inner {
+  border-left:5px solid #4D4F53;
+  padding:28px;
+  background: #fff;
+  height: 155px;
+  -webkit-transition: all 50ms ease-in-out;
+  -moz-transition: all 50ms ease-in-out;
+  -ms-transition: all 50ms ease-in-out;
+  -o-transition: all 50ms ease-in-out;
+  transition: all 50ms ease-in-out;
+}
+
+.tile .label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: #ddd;
+  display: none;
+}
+
+.tile .title {
+  margin: -.5em 0 0em 0;
+  padding: 0 0 0 0;
+  line-height: 1.4;
+  font-weight: 200;
+  font-size: 1.4em;
+  max-height: 4em;
+  overflow: hidden;
+}
+
+.tile .tile-bg .title{
+    margin-left: -5px;
+    padding-left: 5px;
+    margin-right: -5px;
+    padding-right: 5px;
+}
+
+.tile .tile-bg .title span {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 5px 0 0 0 rgba(255,255,255,0.9), -5px 0 0 0 rgba(255,255,255,0.9);
+}
+
+.tile:hover .tile-bg .title span {
+    background: #fff;
+    box-shadow: 5px 0 0 0 #fff, -5px 0 0 0 #fff;
+}
+
+.tile .tile-bg .tile-bg-lower {
+    position: absolute;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    height: 2em;
+    left: 28px;
+    right: 23px;
+    bottom: 1.6em;
+}
+
+.tile:hover .tile-bg .tile-bg-lower {
+    background: #fff;
+}
+
+.tile .tile-lower {
+    background: rgba(255,255,255,0.9);
+}
+
+.tile .tweet {
+    margin: -.5em 0 0 0;
+    padding: 0 0 0 0;
+    line-height: 1.4em;
+    font-size: 1.1em;
+    overflow: hidden;
+    height: 5.5em;
+}
+
+.tile .title-close {
+  margin-bottom: .5em;
+}
+
+.tile .avatar {
+  position: absolute;
+  bottom: 27px;
+  left: 33px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+}
+
+.tile .author {
+  position: absolute;
+  bottom: 28px;
+  left: 60px;
+  font-size: 1.1em;
+  font-weight: 200;
+  width: 11.5em;
+}
+
+.tile .author-tweet {
+  left: 33px;
+}
+
+.tile .author-tweet .fa {
+    font-size: 1.4em;
+}
+
+.tile .score {
+  position: absolute;
+  bottom:28px;
+  right:28px;
+  font-size: 1em;
+  color: #ced4db;
+}
+
+.tile .score span {
+  padding: 0 0 0 1em;
+}
+
+.tile .score-active {
+  color: #595c60;
+}
+
+.tile-promo .tile-inner {
+    border-left-color: #4976BD;
+}
+
+.tile-idea .tile-inner {
+    border-left-color: #86898d;
+}
+
+.tile-text .tile-inner {
+  border-left-color: #404245;
+  background:#595c60;
+  color: #fff;
+}
+
+.tile-promo .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.tile-promo p {
+  position: absolute;
+  padding: 5px 10px;
+  margin: 0 30px 0 0;
+  bottom: 30px;
+  left: 30px;
+  width: auto;
+  /*color: #0067dc;*/
+  background: rgba(255,255,255,0.9);
+  font-size: .9em;
+}
+
+.tile-promo:hover p {
+  background: #fff;
+  color: #000;
+}
+
+.tile-promo i {
+  display: inline-block;
+  width: 1.1em;
+}
+
+.tile .img-post {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+<p><input type="text" class="inputfield title" placeholder="Tittel på nyhet..." value="<%= item.title %>"></p>
+<p><textarea placeholder="Skriv nyheten..." class="inputfield tall2 body"><%= item.source %></textarea></p>
+<p><input type="text" class="inputfield imageUrl" placeholder="Link til forsidebilde (https)..." value="<%= item.url %>"></p>
+<p><input type="text" class="inputfield index" placeholder="Indeks for sticky artikler (0 er først)" value="<%= item.index %>"></p>
+<p><select class="inputfield select-status"><option value="published">Publisert</option></select></p>
+<p>
+    <a href="#" class="button button2 save"><i class="fa fa-ok"></i> Publiser nyhet</a>
+    <a href="#!/admin" class="button button5 close"><i class="fa fa-remove"></i> Avbryt</a>
+</p>

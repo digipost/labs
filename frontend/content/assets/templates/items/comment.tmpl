@@ -1,0 +1,12 @@
+<div id="<%= comment.id %>" class="comment"><div class="comment-inner">
+    <% if (comment.author.admin) { %>
+        <div class="label label-important">Digipost</div>
+    <% } %>
+    <%unsafe dp.item.avatar(comment.author, 100) %>
+    <div class="author"><%unsafe dp.item.author(comment.author) %></div>
+    <p class="meta"><%= dp.date.day(item.date) %></p>
+    <div class="body"><%unsafe dp.format.escapeAndFormatLinebreaks(comment.body) %></div>
+    <% if (dp.session.admin()) { %>
+        <div class="delete"><a class="action action-delete" href="#"><i class="fa fa-trash-o"></i> Slett</a></div>
+    <% } %>
+</div></div>

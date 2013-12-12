@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dispatch</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="test.css">
+    <script src="../dispatch.js"></script>
+    <script src="underscore.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+
+        $(function() {
+
+            dispatch.on("/foo", function() {
+                console.warn("foo");
+                $(".page").hide().filter(".foo").show();
+            });
+
+            dispatch.on("/bar", function() {
+                console.warn("bar");
+                $(".page").hide().filter(".bar").show();
+            });
+
+            dispatch.on("/baz", function() {
+                console.warn("baz");
+                $(".page").hide().filter(".baz").show();
+            });
+
+            $(".page").hide();
+            dispatch.run();
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="#/foo">Foo</a>
+        <a href="#/bar">Bar</a>
+        <a href="#/baz">Baz</a>
+    </nav>
+
+    <div class="page foo">Foo</div>
+    <div class="page bar">Bar</div>
+    <div class="page baz">Baz</div>
+
+</body>
+</html>

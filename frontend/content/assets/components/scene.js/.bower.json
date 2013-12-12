@@ -1,0 +1,15 @@
+{
+  "name": "scene.js",
+  "version": "0.3.0",
+  "main": "scene.js",
+  "homepage": "https://github.com/olav/scene.js",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "cb18113c1720fabd509492ca3e9816a23af508e3"
+  },
+  "_source": "git://github.com/olav/scene.js.git",
+  "_target": "0.x.x",
+  "_originalSource": "scene.js"
+}

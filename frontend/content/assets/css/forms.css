@@ -1,0 +1,73 @@
+.inputfield {
+  background: #fff;
+  color: #4C4E52;
+  padding: 1em;
+  border: 2px solid #dde1e6;
+  font-size: 1.15em;
+  font-weight: normal;
+  width: 100%;
+  margin: 0 10px 0 0;
+  -webkit-transition: border 100ms ease-in-out;
+  -moz-transition: border 100ms ease-in-out;
+  -ms-transition: border 100ms ease-in-out;
+  -o-transition: border 100ms ease-in-out;
+  transition: border 100ms ease-in-out;
+}
+
+.inputfield:focus {
+  outline: none;
+  border-color: #56B4EF;
+}
+
+.inputfield.body {
+    margin: 0;
+}
+
+textarea {
+    height: 12em;
+    line-height: 1.5;
+}
+
+.expand {
+    height: 4em;
+}
+
+.field {
+  margin: 0 0 20px 0;
+}
+
+input.blank {
+    padding: 0;
+    border: none;
+    width: 100%;
+}
+
+input.blank:focus {
+    outline: none;
+    border: none;
+}
+
+input.big {
+  font-size: 1.8em;
+  font-weight: 200;
+  color: #000;
+}
+
+.inputfield.error {
+    border-color: #E32D22;
+}
+
+textarea.tall {
+  height: 16em;
+}
+
+textarea.tall2 {
+  height: 30em;
+}
+
+.openid input {
+    padding: .6em 1em .6em 1em;
+    width: 22em;
+    margin-bottom: 1em;
+}
+

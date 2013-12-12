@@ -1,0 +1,43 @@
+* {
+    margin:0;
+    padding:0;
+    line-height: 1;
+}
+
+body {
+    text-align: center;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    font-size:.9em;
+    padding:5%;
+    background: #f9f9f9;
+}
+
+div, nav {
+    display: inline-block;
+    padding:1em;
+    margin:0 .5em .5em 0;
+    border-radius: .5em;
+    background: #eee;
+    color:#666;
+    width:19em;
+    text-align: left;
+}
+
+nav {
+    float:none;
+    width: 100%;
+    margin:0 0 2em 0;
+}
+
+nav a {
+    color:steelblue;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin:0 .5em 0 0;
+}
+
+.fail { background: #e32d22; color:#fff; }
+.pass { background: #1cbc37; color:#fff; }
+
+.hide { display: none; }

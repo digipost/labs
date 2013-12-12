@@ -1,0 +1,46 @@
+.menu {
+  position: relative;
+  padding: 0 20px 10px 20px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  top: 26px;
+  right: 10px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li a {
+  display: inline-block;
+  padding: .4em 0;
+  margin: 0 1em 0 1em;
+  font-size: 1.2em;
+  border: none;
+  border-top: 2px solid #dde1e6;
+}
+
+.menu li .active,
+.menu li a:hover {
+  color: #e32d22;
+  border-color: #e32d22;
+}
+
+.menu li a:active {
+  border-color: #a00;
+}
+
+@media (max-width: 600px) {
+  .menu { display: none; }
+}
+
+.menu.bottom {
+    clear: left;
+    padding-bottom: 0;
+    padding-top: 1em;
+}

@@ -1,0 +1,9 @@
+<div class="comment"><div class="comment-inner action action-goto-item">
+    <% if (comment.author.admin) { %>
+        <div class="label label-important">Digipost</div>
+    <% } %>
+    <%unsafe dp.item.avatar(comment.author, 100) %>
+    <div class="author"><%unsafe dp.item.author(comment.author) %></div>
+    <p class="meta"><%= dp.date.day(comment.date) %></p>
+    <div class="body"><%= comment.body %></div>
+</div></div>

@@ -1,0 +1,15 @@
+{
+  "name": "digipost-labs",
+  "dependencies": {
+    "es5-shim": "2.x.x",
+    "html5shiv": "3.x.x",
+    "underscore": "1.x.x",
+    "underscore.string": "2.x.x",
+    "dispatch": "1.x.x",
+    "scene.js": "0.x.x",
+    "js-md5": "1.x.x",
+    "jquery": "1.x.x",
+    "jquery.cookie": "1.x.x",
+    "font-awesome": "4.x.x"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "predef": [
+    "dp",
+    "_",
+    "$",
+    "dispatch",
+    "scene",
+    "google",
+    "Document",
+    "md5"
+  ],
+
+  "browser": true,
+  "newcap": true,
+  "noempty": true,
+  "nonew": false,
+  "onevar": false,
+  "plusplus": false,
+  "trailing": true,
+  "eqeqeq": true,
+  "forin": true,
+  "latedef": true,
+  "undef": true,
+  "unused": true,
+  "es3": true,
+
+  "quotmark": "single",
+  "maxcomplexity": 10,
+  "maxstatements": 16,
+  "maxlen": 200,
+  "maxdepth": 3,
+  "maxparams": 5
+}

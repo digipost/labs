@@ -1,0 +1,34 @@
+.search {
+    position: relative;
+    display: block;
+    max-width: 370px;
+    margin: .5em auto;
+    text-align: left;
+}
+
+.search input {
+    padding: .6em 1em .6em 2.5em;
+    border-radius: 2em;
+}
+
+.search .icon {
+    padding: 8px;
+    position: absolute;
+    left: .8em;
+    top: 5px;
+    color: rgb(167, 167, 167);
+    border: none;
+    background-color: transparent;
+}
+
+.search .icon.icon-clear {
+    left: auto;
+    right: .5em;
+    top: 2px;
+    font-size: 1.3em;
+}
+
+.search .icon:hover {
+    color: #4C4E52;
+    cursor: pointer;
+}

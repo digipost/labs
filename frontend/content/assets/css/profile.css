@@ -1,0 +1,85 @@
+.profile {
+  max-width: 750px;
+  padding: 100px;
+  margin: 20px auto;
+}
+
+.ie8 .profile {
+  width: 750px;
+}
+
+.profile {
+  background: #fff;
+}
+
+.profile h1 {
+  font-weight: 200;
+  font-size: 1.8em;
+  line-height: 1.5;
+  margin: 0 0 .2em 0;
+  color: #323538;
+  position: relative;
+}
+
+.profile h1 .avatar {
+  float: right;
+  width: 200px;
+  height: 200px;
+  margin: .2em 0 1em 2em;
+  border-radius: 100%;
+}
+
+.profile .meta {
+  color: #4D4F53;
+  margin-bottom: 1.5em;
+}
+
+.profile h2, .profile h4 {
+  font-weight: 200;
+  font-size: 1.3em;
+  margin: 0;
+  color: #323538;
+}
+
+.profile p {
+  font-size: 1em;
+}
+
+.profile .contact {
+    line-height: 1.4em;
+}
+
+.profile .contact i {
+    width: 1em;
+    margin-right: .5em;
+    text-align: center;
+}
+
+.profile .contact a {
+    text-decoration: none;
+    color: #4D4F53;
+}
+
+.profile .contact a:hover {
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .profile {
+        padding: 50px;
+    }
+    .profile h1 .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile {
+        padding: 20px;
+    }
+    .profile h1 .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}

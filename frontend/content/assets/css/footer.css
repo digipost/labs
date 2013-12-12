@@ -1,0 +1,53 @@
+footer {
+    color: #4D4F53;
+    /*background: #fff;*/
+    padding: 2em 0 2em 0;
+}
+
+footer .outer {
+    padding: 0 10em;
+    max-width: 80em;
+    margin: 0 auto;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+footer .inner {
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    color: #4D4F53;
+    text-decoration: underline;
+    padding: .5em 0;
+    display: inline-block;
+    border: none;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+@media all and (max-width: 50em) {
+    footer {
+        padding: 5em 0;
+    }
+
+    footer .outer {
+        padding: 0 5em;
+    }
+
+    footer .inner {
+        display: block;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 0 .5em 0 0;
+    }
+}

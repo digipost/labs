@@ -1,0 +1,27 @@
+<div class="comments">
+
+    <h3 class="section"><span>
+        <i class="fa fa-comment"></i> <strong class="comments-count"><%= item.comments.length || 'Klar for' %></strong>
+        <%= item.comments.length === 1 ? 'kommentar' : 'kommentarer' %>
+    </span></h3>
+
+    <% if (!dp.session.user) { %>
+        <div class="box box-button"><p><a href="#" class="button button2 session-login">
+            <i class="fa fa-lock"></i>
+            Logg inn og skriv din mening
+        </a></p></div>
+    <% } %>
+
+    <% if (dp.session.user) { %>
+        <form>
+            <p><textarea placeholder="Skriv din kommentar..." class="inputfield expand" spellcheck="false"></textarea></p>
+            <p><a href="#" class="button button2 save">
+                <i class="fa fa-comment"></i>
+                Legg til kommentar
+            </a></p>
+        </form>
+    <% } %>
+
+    <div class="comments-list"></div>
+
+</div>

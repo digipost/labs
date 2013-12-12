@@ -1,0 +1,306 @@
+#modalwrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #333;
+    background: url("../images/opacity/black50.png");
+    background: rgba(0,0,0,0.5);
+}
+
+#modalwrap.nobg {
+    background: none;
+}
+
+.ui-min #modalwrap {
+    position: absolute;
+    background: #fff;
+    width: auto;
+}
+
+#modalwrap:hover {
+    cursor: pointer;
+}
+
+.ie8 #modalwrap:hover {
+    cursor: default;
+}
+
+#modal,
+#modal:hover {
+    cursor: default;
+}
+
+#modal:hover {
+    cursor: auto;
+}
+
+#modal {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    padding-bottom: 70px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 2px;
+}
+
+.ui-min #modal {
+    box-shadow: none;
+    padding: 1em 0 4em 0;
+    position: absolute;
+    border-radius: 0;
+}
+
+.nobuttons #modal {
+    padding-bottom: 0px;
+}
+
+#modalwrap.blank #modal {
+    background: none;
+    border: none;
+}
+
+#modal iframe.BUYPASS {
+    padding: 30px 0 0 0;
+}
+
+#modal iframe.BANKID {
+    padding: 70px 0 0 25px;
+}
+
+#modal iframe.BANKID_PAA_MOBIL {
+    padding: 70px 0 0 25px;
+}
+
+.ui-min #modal iframe.BANKID_PAA_MOBIL {
+    padding: 50px 0;
+    margin: 0 -40px;
+}
+
+#modal p.auth-error {
+    font-size: 1em;
+    margin: 0 0 30px 0;
+}
+
+#modal .closer {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 9999;
+    color: #919195;
+    font-size: 1.4em;
+}
+
+#modal .closer:hover {
+    color: #000;
+}
+
+#modal .head {
+    font-size: 1.4em;
+    padding: 30px;
+}
+
+#modal .head i {
+    display: block;
+    float: left;
+    margin: 0 .5em 0 0;
+}
+
+#modal .text {
+    padding: 0 30px 30px 30px;
+    font-size: 1.15em;
+    line-height: 1.5;
+}
+
+#modal .text p {
+    line-height: 1.5;
+}
+
+.nohead #modal .text {
+    padding: 50px;
+    text-align: center;
+    font-size: 1.15em;
+}
+
+.ui-min .nohead #modal .text {
+    padding: 30px;
+}
+
+.custom #modal .text {
+    padding: 0 50px;
+}
+
+.uploader #modal .text {
+    padding: 0;
+}
+
+.plain #modal .text {
+    padding: 30px;
+}
+
+#modal .description {
+    margin-bottom: 2em;
+    font-size: 0.9em;
+    color: #6F7275;
+}
+
+#modal .description p {
+    margin-bottom: .5em;
+}
+
+.uploader p {
+    padding: 0 0 20px 0;
+    margin: 0;
+    text-align: left;
+    color: #757477;
+}
+
+.uploader #modal .text .loading-page {
+    padding-top: 0px;
+}
+
+.text #modal .text {
+    text-align: left;
+    font-size: 1em;
+}
+
+.boxed #modal .text {
+    padding: 1px;
+}
+
+#modal pre {
+    height: 100px;
+    background: #f1f1f1;
+    padding: 20px;
+    font-size: 0.85em;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#modal .buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2em 0;
+    background: #eceef1;
+    text-align: center;
+    border-radius: 0 0 2px 2px;
+}
+
+#modal .buttons .button {
+    margin: 3px;
+}
+
+.ui-min #modal .buttons {
+    position: static;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+#modal .message {
+    float: left;
+    width: 45%;
+}
+
+#modal .preview {
+    float: right;
+    width: 45%;
+}
+
+#modal .preview pre {
+    height: 160px;
+}
+
+#splash {
+    text-align: left;
+}
+
+#splash,
+#splash ul,
+#splash p {
+    font-size: 1em;
+}
+
+#splash h3 {
+    background: none;
+    color: #e32d22;
+    border: none;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0 0 30px 0;
+}
+
+.notifications {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+}
+
+.ui-min .notifications {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 90%;
+    bottom: 5%;
+    right: 5%;
+}
+
+.notification {
+    color: #fff;
+    background: #404245;
+    background: rgba(0,0,0,0.6);
+    padding: 1em;
+    margin: 0 0 .2em 0;
+    width: 24em;
+    height: 1em;
+    position: relative;
+}
+
+.ui-min .notification {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 3em;
+    width: 100%;
+}
+
+.notification:hover {
+    cursor: pointer;
+}
+
+.notification .left {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    z-index: 2;
+}
+
+.notification .right {
+    position: absolute;
+    z-index: 2;
+    top: 1em;
+    right: 1em;
+}
+
+.notification .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0,0,0,0.6);
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}

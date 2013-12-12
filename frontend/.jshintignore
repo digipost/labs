@@ -1,0 +1,7 @@
+**/vendor
+**/plugins
+**/graphs
+
+#*#
+*~
+spec

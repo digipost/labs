@@ -1,0 +1,12 @@
+<div class="post animated fadeInDown">
+    <h1>
+        <%unsafe dp.item.avatarWithLink(item.author, 200) %>
+        <%= item.title %>
+    </h1>
+    <p class="meta">Idé fra <%unsafe dp.item.author(item.author) %>, <%= dp.date.day(item.date) %></p>
+    <div class="body"><%unsafe dp.format.escapeAndFormatLinebreaks(item.body) %></div>
+    <div class="view-admin"></div>
+    <div class="view-votes"></div>
+    <div class="view-comments"></div>
+    <div class="finished hide"><div class="finished-text">Ferdig</div></div><div class="finished-inner hide"></div>
+</div>

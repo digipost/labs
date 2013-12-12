@@ -1,0 +1,5 @@
+<tr>
+    <td class="title"><a href="#!/admin/item/<%= item.id %>/edit"><%= item.type === 'tweet' ? item.body : item.title %></a></td>
+    <td><%= item.type %></td>
+    <td><a href="#!/profiles/<%= item.author.userId %>"><%= item.author.name %></a></td>
+</tr>

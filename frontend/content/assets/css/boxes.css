@@ -1,0 +1,57 @@
+.box {
+  padding: 30px 30px 15px 30px;
+  background: #eceef1;
+}
+
+.boxes {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+
+.boxes .box {
+  float: left;
+}
+
+.box-big {
+  width: 70%;
+}
+
+.box-small {
+  width: 30%;
+}
+
+.box-inside {
+  border-right: 1em solid #fff;
+}
+
+.box-in-box {
+    background-color: #fff;
+    border: 1em solid #fff;
+}
+
+.box-top {
+  margin: 30px 0 0 0;
+}
+
+.box-small-top {
+  margin: 15px 0 0 0;
+}
+
+.box-button {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+    .box-big {
+        width: 100%;
+    }
+
+    .box-small {
+        width: 100%;
+    }
+
+    .box-inside {
+        border: none;
+    }
+}

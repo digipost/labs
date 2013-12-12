@@ -1,0 +1,7 @@
+<p><input type="text" class="inputfield url" placeholder="Url til tweet..." value="<%= item.url %>" ></p>
+<p><input type="text" class="inputfield author" placeholder="@navn..." value="<%= item.author ? item.author.name : '' %>" ></p>
+<p><textarea placeholder="Twittermelding..." class="inputfield tall body"><%= item.body %></textarea></p>
+<p>
+    <a href="#" class="button button2 save"><i class="fa fa-ok"></i> Publiser tweet</a>
+    <a href="#!/admin" class="button button5 close"><i class="fa fa-remove"></i> Avbryt</a>
+</p>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]><html class="ie7 ie" lang="no"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie" lang="no"><![endif]-->
+<!--[if IE 9]><html class="ie9 ie" lang="no"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="no" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
+
+<head>
+
+<title>Digipost Labs</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no, minimum-scale = 1.0, maximum-scale = 1.0">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="google" content="notranslate">
+<meta name="fragment" content="!">
+
+<meta name="application-name" content="Digipost Labs">
+<meta name="msapplication-TileColor" content="#e32d22">
+<meta name="msapplication-TileImage" content="<%= config.root %>/assets/images/icons/win8tile.png">
+
+<meta name="robots" content="§§robots§§">
+
+<link rel="apple-touch-icon-precomposed" href="<%= config.root %>/assets/images/icons/app.png">
+<link rel="shortcut icon" href="<%= config.root %>/assets/images/icons/icon.ico?1">
+<link rel="icon" href="<%= config.root %>/assets/images/icons/icon.png?1">
+
+<%unsafe assets("css", "common") %>
+
+</head>
+<body lang="no" id="digipost">
+
+<div class="skiplinks hidden">
+    <a tabindex="-1" class="scroll" href="#header" title="Hopp til navigasjon">Hopp til navigasjon</a>
+    <a tabindex="-1" class="scroll" href="#page" title="Hopp til innhold">Hopp til innhold</a>
+</div>
+
+<% if(get("upgrade-notice", true)) { %>
+<!--[if lt IE 9]>
+<div class="bar">
+    <i class="fa fa-exclamation-circle"></i>
+    Vi anbefaler at du bruker en moderne nettleser. <a href="https://www.digipost.no/nettleser">Les&nbsp;mer&nbsp;her</a>.
+</div>
+<![endif]-->
+<% } %>
+
+<noscript>
+    <div class="bar">
+        <i class="fa fa-exclamation-circle"></i>
+        Du må aktivere <strong>JavaScript</strong> i din nettleser for å bruke Digipost Labs.
+    </div>
+</noscript>
+
+<div id="loader"><div></div></div>
+
+<div id="header" role="navigation"><div class="inner">
+    <h1><a title="Digipost" href="/">
+        <div class="img img-digipost-white">Digipost<%= get("title") ? ": " + get("title") : "" %></div>
+    </a></h1>
+    <ul class="first">
+        <li class="first"><a accesskey="p" href="https://www.digipost.no">Privat</a></li>
+        <li class="bedrift"><a accesskey="b" href="https://www.digipost.no/bedrift/">Bedrift</a></li>
+        <li class="hjelp last"><a accesskey="?" href="https://www.digipost.no/hjelp/">Hjelp</a></li>
+        <li class="labs active"><a accesskey="?" href="/">Labs</a></li>
+    </ul>
+    <ul>
+        <li><a class="session-admin hide" href="#!/admin">Admin</a></li>
+        <li><a class="session-in hide session-name" href="#"></a></li>
+        <li><a class="session-out hide session-login" accesskey="l" href="#">Logg inn</a></li>
+        <li><a class="session-in hide session-logout" href="#" accesskey="u">Logg ut</a></li>
+    </ul>
+    <div class="end">
+        <a href="http://www.posten.no"><div class="img img-posten-white">Digipost</div></a>
+    </div>
+</div></div>
+
+<div class="tiles container">
+    <div class="search">
+        <form>
+            <input type="text" class="inputfield action action-search" placeholder="Søk i idéer og blogg…" title="Søk i idéer og blogger. Bruk stikkord.">
+            <button class="icon" type="submit"><i class="fa fa-search"></i></button>
+            <a class="icon icon-clear action action-clear-search hide" href="#"><i class="fa fa-times"></i></a>
+        </form>
+    </div>
+</div>
+
+<div class="menu">
+    <ul>
+        <li><a class="txt index" href="#!/">Hele Labs</a></li>
+        <li><a class="txt idea" href="#!/idea">Idéer</a></li>
+        <li><a class="txt news" href="#!/news">Blogg</a></li>
+    </ul>
+</div>
+
+<div id="page"></div>
+
+<footer class="clear hide"><div class="outer"><div class="inner">
+    <ul>
+        <li>Digipost Labs er en nettside fra Posten Norge AS</li>
+        <li>Posten Norge AS &copy; 2011-2013</li>
+        <li>Innhold lisensiert under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">CC-BY-SA 3.0</a></li>
+        <li><strong>Redaktør:</strong> <a href="#!/profiles/529f1073e4b01d76f220b418">Elisabeth Strømnes Bøe</a></li>
+        <li><strong>Ansvarlig redaktør:</strong> <a href="#!/profiles/529f1073e4b01d76f220b013">Thomas Mathisen</a></li>
+    </ul>
+    <div class="clear"></div>
+</div></div></footer>
+
+<%unsafe assets("js", "common") %>
+<%unsafe assets("tmpl", "common") %>
+</body>
+</html>

@@ -1,0 +1,13 @@
+frontend/public
+node_modules
+.idea/
+.idea_modules/
+*.iml
+target/
+.lib/
+logs/
+.DS_Store
+secret.conf
+.cache
+.classpath
+.project

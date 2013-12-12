@@ -1,0 +1,180 @@
+#digipost .button {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  width: auto;
+  zoom: 1;
+  padding: 6px 11px 5px 13px;
+  margin: 0 5px 5px 0;
+  text-decoration: none;
+  text-shadow: none;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  -webkit-transition: background 50ms ease-in-out;
+  -moz-transition: background 50ms ease-in-out;
+  -ms-transition: background 50ms ease-in-out;
+  -o-transition: background 50ms ease-in-out;
+  transition: background 50ms ease-in-out;
+  background: #56B4EF;
+  border-bottom: 2px solid #228fd3;
+}
+
+#digipost .button:hover,
+#digipost .button:focus {
+  background: #46a5e0;
+  border-bottom-color: #0085c7;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+#digipost .button:active {
+  background: #0085c7;
+  color: #fff;
+}
+
+/* ------------------------------------------------------------ */
+
+#digipost .button.button2 {
+  background: #e32d22;
+  border-bottom-color: #a00;
+}
+
+#digipost .button.button2:hover,
+#digipost .button.button2:focus {
+  background: #d00;
+  border-bottom-color: #900;
+}
+
+#digipost .button.button2:active {
+  background: #a00;
+}
+
+/* ------------------------------------------------------------ */
+
+#digipost .button.button3 {
+  background: #eceef1;
+  color: #0067dc;
+  font-weight: normal;
+  border-color: #dde1e6;
+}
+
+#digipost .button.button3:hover,
+#digipost .button.button3:focus {
+  background: #dde1e6;
+  border-bottom-color: #ced4db;
+}
+
+#digipost .button.button3:active {
+  background: #ced4db;
+}
+
+/* ------------------------------------------------------------ */
+
+#digipost .button.button4 {
+  background: #7bc144;
+  color: #fff;
+  font-weight: normal;
+  border-color: #6fb13b;
+}
+
+#digipost .button.button4:hover,
+#digipost .button.button4:focus {
+  background: #6fb13b;
+  border-bottom-color: #578b2e;
+}
+
+#digipost .button.button4:active {
+  background: #3f6421;
+}
+
+/* ------------------------------------------------------------ */
+
+#digipost .button.button5 {
+  background: none;
+  color: #0067dc;
+  font-weight: normal;
+  border-color: transparent;
+}
+
+#digipost .button.button5:hover,
+#digipost .button.button5:focus {
+  background: #dde1e6;
+  border-bottom-color: transparent;
+}
+
+#digipost .button.button5:active {
+  background: #ced4db;
+}
+
+/* ------------------------------------------------------------ */
+
+#digipost .button.disabled {
+  opacity: 0.4;
+  -ms-filter: "alpha(opacity=40)";
+  filter: alpha(opacity=40);
+}
+
+#digipost .button i {
+  float: left;
+  display: block;
+  margin: 3px 7px -2px -5px;
+  position: static;
+  left: 0;
+  top: 0;
+}
+
+#digipost .button.big {
+  border-bottom-width: 3px;
+  padding: 8px 30px 8px 30px;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+#digipost .button.big i {
+  margin: 3px 10px -3px -5px;
+}
+
+#digipost .button.small {
+  border-bottom-width: 2px;
+  padding: 4px 13px 2px 13px;
+  font-size: 0.85em;
+  border-radius: 4px;
+}
+
+#digipost .button.button-span {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#digipost .button-alone {
+  display: block;
+  max-width: 13em;
+  margin: 2em auto 0 auto;
+}
+
+#digipost .button .icon {
+    top: .2em;
+    position:relative;
+    width: 1.3em;
+    height: 1.3em;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#digipost .button .icon.yahoo {
+    background-image: url("/assets/images/icons/yahoo.png");
+}
+
+#digipost .button .icon.digipost {
+    top: -2px;
+    background-image: url("/assets/images/icons/win8tile.png");
+}

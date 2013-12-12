@@ -1,0 +1,70 @@
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  text-indent: -999em;
+}
+
+.img-ad {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.img-digipost-white {
+  background-image: url("/assets/images/icons/digipost.png");
+  width: 125px;
+  height: 30px;
+  background-size: 125px 30px;
+}
+
+.img-posten-white {
+  background-image: url("/assets/images/icons/posten.png");
+  width: 100px;
+  height: 31px;
+  background-size: 100px 31px;
+}
+
+.img-fjell {
+  background-image: url("/assets/images/bg/fjell.jpg");
+}
+
+.img-tile-shop {
+  background-image: url("/assets/images/tiles/shop.jpg");
+}
+
+.img-tile-payment {
+  background-image: url("/assets/images/tiles/payment.jpg");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and ( min--moz-device-pixel-ratio: 2),
+only screen and ( -o-min-device-pixel-ratio: 2/1),
+only screen and ( min-device-pixel-ratio: 2),
+only screen and ( min-resolution: 192dpi),
+only screen and ( min-resolution: 2dppx) {
+
+  .img-digipost-white {
+    background-image: url("/assets/images/icons/digipost-2x.png");
+  }
+
+  .img-posten-white {
+    background-image: url("/assets/images/icons/posten-2x.png");
+  }
+
+  .img-fjell {
+    background-image: url("/assets/images/bg/fjell@2x.jpg");
+  }
+
+  .img-tile-shop {
+    background-image: url("/assets/images/tiles/shop@2x.jpg");
+  }
+
+  .img-tile-payment {
+    background-image: url("/assets/images/tiles/payment@2x.jpg");
+  }
+
+}

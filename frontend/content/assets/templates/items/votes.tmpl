@@ -1,0 +1,20 @@
+<div class="votes animated fadeInDown">
+
+    <h3 class="section"><span>
+        <i class="fa fa-thumbs-up"></i> <strong class="votes-count"><%= item.votes || 'Ingen' %></strong>
+        <%= item.votes === 1 ? 'stemme' : 'stemmer' %> til nå. Liker du idéen?
+    </span></h3>
+
+    <p>
+        <% if (!dp.session.user) { %>
+            <a class="button button3 session-login" href="#"><i class="fa fa-plus"></i> Stem på denne idéen</a>
+        <% } else { %>
+            <a class="button button3 action action-vote" href="#"><i class="fa fa-plus"></i> Stem på denne idéen</a>
+        <% } %>
+        <a class="button button3 action action-share" rel="twitter" href="#"><i class="fa fa-twitter"></i> Twitter</a>
+        <a class="button button3 action action-share" rel="facebook" href="#"><i class="fa fa-facebook"></i> Facebook</a>
+        <a class="button button3 action action-share" rel="google" href="#"><i class="fa fa-google-plus-square"></i> Google+</a>
+        <a class="button button3 action action-share" rel="linkedin" href="#"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+    </p>
+
+</div>

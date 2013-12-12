@@ -1,0 +1,322 @@
+.post {
+  max-width: 750px;
+  padding: 100px;
+  margin: 20px auto;
+}
+
+.ie8 .post {
+  width: 750px;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em 2em;
+  text-align: center;
+  font-weight: bold;
+  background: #96cd6a;
+  color: #fff;
+}
+
+.banner i {
+  display: inline-block;
+  width: 1.5em;
+}
+
+.post {
+  background: #fff;
+}
+
+.post h1 {
+  font-weight: 200;
+  font-size: 1.8em;
+  line-height: 1.5;
+  margin: 0 0 .2em 0;
+  color: #323538;
+  position: relative;
+}
+
+.post h1 .avatar {
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin: .2em 0 0 1em;
+  border-radius: 100%;
+}
+
+.post .meta {
+  color: #919195;
+  margin-bottom: 5em;
+}
+
+.post .meta a {
+    color: #919195;
+}
+
+.post h2, .post h4 {
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0 0 .5em 0;
+  color: #323538;
+}
+
+.post p {
+    margin-bottom: 2em;
+}
+
+.post p + h2 {
+  margin-top: 2em;
+}
+
+.post p, .post li, .post blockquote {
+  font-size: 1em;
+}
+
+.avatar {
+    border-style: none;
+}
+
+.body ul, .body ol {
+  padding: 0;
+  margin: 1em 0 1em 2em;
+}
+
+.body li {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.body blockquote {
+  padding: 0 0 0 .5em;
+  margin: 0 0 0 .5em;
+  border-left: 5px solid #dadfe4;
+}
+
+.body img {
+  display: block;
+  max-width: 100%;
+  clear: both;
+  margin: .3em 0;
+}
+
+.body .left {
+  max-width: 40%;
+  float: left;
+  margin: 0 2em 2em 0;
+}
+
+.body .right {
+  max-width: 40%;
+  float: right;
+  margin: 0 0 2em 2em;
+}
+
+.body {
+  margin: 1em 0;
+  overflow: auto;
+}
+
+.body h1, .body h2, .body h3, .body h4, .body h5, .body h6 {
+  text-align: left;
+  font-weight: bold;
+  margin: 0 0 .5em 0;
+  padding: 0;
+  color: #323538;
+}
+
+.body h1 {
+    font-weight: 200;
+}
+
+.body h2 {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+.body h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.body h4 {
+    font-weight: 500;
+}
+
+.body pre {
+  font-size: .9em;
+  margin: 1em 0 1em 2em;
+  overflow: auto;
+  line-height: 1.5;
+  color: #6F7275;
+}
+
+.comment {
+  position: relative;
+  margin-bottom: 1px;
+  padding: 0 0 20px 70px;
+}
+
+.comment .author {
+  color: #0067dc;
+  font-weight: bold;
+}
+
+.comment p {
+  padding: 0;
+  margin: 0 0 .5em 0;
+}
+
+.comment-inner {
+  background: #f6f6f7;
+  padding:20px 25px 1px 25px;
+}
+
+.comment-inner.action {
+    cursor: pointer;
+}
+
+.comment-inner:before {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 22px;
+  left: 50px;
+  border:10px solid transparent;
+  border-right-color: #f6f6f7;
+}
+
+.comment .label {
+  position: absolute;
+  top: 70px;
+  left: -4px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  background: #e32d22;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: .2em .5em;
+}
+
+.comment .avatar {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.comment .delete {
+    margin: 1em 0;
+}
+
+.comments form {
+  padding: 0 0 2em 0;
+}
+
+.comments .box {
+    margin-bottom: 2em;
+}
+
+.comment p + h2 {
+  margin-top: 0;
+}
+
+.comment .meta {
+    color: #919195;
+    margin-bottom: 0;
+}
+
+.post h3.section {
+  margin: 3em 0 2em 0;
+  border-bottom: 1px solid #eceef1;
+  height: .8em;
+  font-size: 1.4em;
+  font-weight: 200;
+  color: #323538;
+}
+
+.post h3.section span {
+  display: inline-block;
+  background: #fff;
+  padding: 0 1em 0 0;
+}
+
+.post h3.section i {
+  width: 1.2em;
+  display: inline-block;
+}
+
+.finished {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 53px 53px 0;
+    border-color: transparent #86898d transparent transparent;
+}
+
+.finished-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 25px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.finished-text  {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    font-weight: 400;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .post {
+        padding: 50px;
+    }
+
+    .post h1 .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .post .meta {
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 400px) {
+    .post {
+        padding: 20px;
+    }
+
+    .comment {
+        padding-left: 0;
+    }
+
+    .comment .avatar {
+        display: none;
+    }
+
+    .comment .label {
+        display: none;
+    }
+
+    .comment-inner:before {
+        display: none;
+    }
+}

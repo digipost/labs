@@ -1,0 +1,11 @@
+<a class="tile tile-news" href="#!/item/<%= item.id %>"><div class="tile-inner">
+    <div class="tile-bg-lower hide"></div>
+    <div class="label">Nyhet</div>
+    <div class="title"><span><%= item.title %></span></div>
+    <%unsafe dp.item.avatar(item.author) %>
+    <div class="author author-news"><%= item.author.name %></div>
+    <div class="score">
+        <span class="score-<%= item.comments.length ? 'active' : 'inactive' %>">
+            <i class="fa fa-comment"></i> <%= item.comments.length || 0 %></span>
+    </div>
+</div></a>

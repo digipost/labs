@@ -1,0 +1,11 @@
+<div class="post animated fadeInDown">
+    <h1>
+        <%unsafe dp.item.avatarWithLink(item.author, 200) %>
+        <%= item.title %>
+    </h1>
+    <p class="meta">Skrevet av <%unsafe dp.item.author(item.author) %>, <%= dp.date.day(item.date) %></p>
+    <div class="body"><%unsafe item.body %></div>
+    <div class="view-admin"></div>
+    <div class="view-share"></div>
+    <div class="view-comments"></div>
+</div>
