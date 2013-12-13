@@ -1,0 +1,16 @@
+#!/bin/bash -e
+#
+# Update frontend dependencies (jquery etc)
+#
+
+# Update frontend dependencies.
+echo "updating browser dependencies"
+rm -rf content/assets/components
+bower cache clean
+bower install
+
+# Duplicate font files to make them work on localhost and in qa/prod.
+echo "duplicating font files"
+rm -rf content/assets/fonts
+cp -r content/assets/components/font-awesome/fonts content/assets/fonts
+perl -i -pe  's/[.\/]+\/fonts\//\/assets\/fonts\//g' content/assets/components/font-awesome/css/font-awesome.css
