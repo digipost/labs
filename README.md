@@ -10,7 +10,7 @@ Labs is a tailor-made solution for businesses who want to use blog posts to comm
 
 Features includes:
 
-* Let admins create blog posts.
+* Let admins create blog posts, twitter quotes and ideas.
 * Let users comment on blog posts.
 * Let users contribute ideas.
 * Let users comment on ideas.
