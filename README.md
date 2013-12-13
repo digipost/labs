@@ -20,15 +20,15 @@ Features includes:
 Technologies used
 =================
 
-Labs is a single page js app with Scala backend with MongoDB, running on Linux
+Labs is a single page js app with a Scalatra backend with MongoDb.
 
-## Frontend
+### Frontend
 
 * [dispatch.js](https://github.com/olav/dispatch.js) for routing
 * [scene.js](https://github.com/olav/scene.js) for view model rendering
 * [underscore.js](http://underscorejs.org/) for templating
 
-## Backend
+### Backend
 
 * [Scalatra](http://scalatra.org/) for web api
 * [MongoDB](http://www.mongodb.org/) for data storage
