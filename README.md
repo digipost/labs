@@ -20,12 +20,24 @@ Features includes:
 Technologies used
 =================
 
-Labs is written in Scala using MongoDB as back-end, running on Linux.
+Labs is a single page js app with Scala backend with MongoDB, running on Linux
+
+## Frontend
+
+* [dispatch.js](https://github.com/olav/dispatch.js) for routing
+* [scene.js](https://github.com/olav/scene.js) for view model rendering
+* [underscore.js](http://underscorejs.org/) for templating
+
+## Backend
+
+* [Scalatra](http://scalatra.org/) for web api
+* [MongoDB](http://www.mongodb.org/) for data storage
+* [json4s](https://github.com/json4s/json4s) and jackson for json support
 
 Demo
 ====
 
-Comming soon...
+[Digipost Labs](https://labs.digipost.no)
 
 License
 =======
