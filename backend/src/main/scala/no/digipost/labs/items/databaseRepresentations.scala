@@ -27,4 +27,5 @@ case class DbItem(_id: ObjectId,
                   url: Option[String] = None,
                   status: Option[Status.Value] = None,
                   index: Option[Int] = None,
-                  comments: List[DbComment] = List())
+                  comments: List[DbComment] = List(),
+                  oldId: Option[String] = None)
