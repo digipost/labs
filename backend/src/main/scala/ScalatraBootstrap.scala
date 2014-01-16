@@ -1,5 +1,6 @@
 import com.mongodb.casbah.Imports._
 import no.digipost.labs.items.{ItemsService, ItemsResource, MongoItemsRepository}
+import no.digipost.labs.legacy.{LegacyRedirectResource}
 import no.digipost.labs.login.SessionsResource
 import no.digipost.labs.oauth.LoginWithDigipost
 import no.digipost.labs._
@@ -22,9 +23,12 @@ class ScalatraBootstrap extends LifeCycle with Logging {
     val itemsRepo = new MongoItemsRepository(itemsColl)
     val userColl = db("users")
     val usersRepo = new MongoUsersRepository(userColl)
-
-    context.mount(new ItemsResource(new ItemsService(itemsRepo)), "/*")
+    val itemsService = new ItemsService(itemsRepo)
+    
+    context.mount(new ItemsResource(itemsService), "/*")
     context.mount(new SessionsResource(settings, new LoginWithDigipost, new OpenIdConsumer, usersRepo), "/sessions/*")
     context.mount(new UsersResource(usersRepo), "/users/*")
+    
+    context.mount(new LegacyRedirectResource(settings, itemsService), "/legacy/*")
   }
 }

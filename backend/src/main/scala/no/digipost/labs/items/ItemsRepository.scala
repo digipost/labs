@@ -7,6 +7,8 @@ trait ItemsRepository {
 
   def findById(id: String): Option[DbItem]
 
+  def findByOldId(oldId: String): Option[DbItem]
+
   def findByType(t: String, start: Option[Int]): (Seq[DbItem], Int)
 
   def insert(item: DbItem): Option[DbItem]

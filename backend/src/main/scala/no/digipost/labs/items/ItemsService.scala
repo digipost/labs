@@ -20,6 +20,9 @@ class ItemsService(itemsRepo: ItemsRepository) {
   def findById(id: String, user: Option[SessionUser]): Try[Item] =
     Try(itemsRepo.findById(id).map(dbItemToItem(user))).flatMap(optionToWebError(404, "Not found"))
 
+  def findByOldId(oldId: String, user: Option[SessionUser]): Try[Item] =
+    Try(itemsRepo.findByOldId(oldId).map(dbItemToItem(user))).flatMap(optionToWebError(404, "Not found"))
+
   def findByType(`type`: String, user: Option[SessionUser], start: Option[Int], linkBuilder: LinkBuilder): Try[Items] =
     Try(findManyWithPaging(user, start, itemsRepo.findByType(`type`, _: Option[Int]), linkBuilder))
 

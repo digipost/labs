@@ -7,6 +7,7 @@ import org.bson.BSONObject
 import java.util.Date
 import org.bson.types.ObjectId
 import no.digipost.labs.util.{Logging, Repository}
+import scala.Some
 
 class MongoItemsRepository(items: MongoCollection) extends ItemsRepository with Repository with Logging {
 
@@ -18,6 +19,8 @@ class MongoItemsRepository(items: MongoCollection) extends ItemsRepository with 
   }
 
   def findById(id: String): Option[DbItem] = items.findOne(idQuery(id)) flatMap toObject[DbItem]
+
+  def findByOldId(oldId: String): Option[DbItem] = items.findOne(MongoDBObject("oldId" -> oldId)) flatMap toObject[DbItem]
 
   def findBy(key: String, value: String, start: Option[Int]): (Seq[DbItem], Int) = {
     val (found, count) = findMany(MongoDBObject(key -> value), start)

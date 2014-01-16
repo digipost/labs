@@ -18,6 +18,8 @@ class TestItemsRepository extends ItemsRepository {
     items.find(_._id == id)
   }
 
+  def findByOldId(oldId: String): Option[DbItem] = items.find(_.oldId.exists(_ == oldId))
+
   def findByType(t: String, start: Option[Int] = Some(0)): (Seq[DbItem], Int) = {
     val found = items.filter(_.`type`== t).drop(start.getOrElse(0))
     (found, found.size)

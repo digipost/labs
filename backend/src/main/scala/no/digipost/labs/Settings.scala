@@ -7,6 +7,8 @@ import no.digipost.labs.util.Logging
 class Settings(val config: Config) {
   val environment = config.getString("environment")
 
+  val basePath = config.getString("basePath")
+
   val mongoDatabase = config.getString("mongo.database")
   val mongoHost = config.getString("mongo.host")
   val mongoPort = config.getInt("mongo.port")
