@@ -114,6 +114,10 @@ a.tile:hover {
     height: 5.5em;
 }
 
+.tile .tweet .fa {
+  color: #55acee;
+}
+
 .tile .title-close {
   margin-bottom: .5em;
 }
@@ -142,7 +146,8 @@ a.tile:hover {
 }
 
 .tile .author-tweet .fa {
-    font-size: 1.4em;
+  font-size: 1.8em;
+  color: #55acee;
 }
 
 .tile .score {
@@ -162,7 +167,7 @@ a.tile:hover {
 }
 
 .tile-promo .tile-inner {
-    border-left-color: #4976BD;
+    border-left-color: #55acee;
 }
 
 .tile-idea .tile-inner {
