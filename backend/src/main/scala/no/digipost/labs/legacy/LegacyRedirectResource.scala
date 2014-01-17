@@ -9,15 +9,15 @@ import org.scalatra.{NotFound, MovedPermanently}
 class LegacyRedirectResource(settings: Settings, itemsService: ItemsService) extends DigipostLabsStack with Logging with ResponseHandler {
   import LegacyRedirectResource._
 
-  get("/idea/:idString") {
+  get("/ideer/:idString") {
     generateRedirectResponse(params("idString"), "i")
   }
 
-  get("/news/:idString") {
+  get("/pages/:idString") {
      generateRedirectResponse(params("idString"), "n")
   }
 
-  get("/news/nor/:idString") {
+  get("/pages/nor/:idString") {
     generateRedirectResponse(params("idString"), "n")
   }
   

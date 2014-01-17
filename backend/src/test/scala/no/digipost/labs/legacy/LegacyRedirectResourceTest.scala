@@ -37,34 +37,34 @@ class LegacyRedirectResourceTest extends ScalatraSuite with FunSuite with Should
   }
 
   test("should return 301 for known old legacy news urls") {
-    get("/legacy/news/125-flyttemeldinger_for_pensjonsavtaler") {
+    get("/legacy/pages/125-flyttemeldinger_for_pensjonsavtaler") {
       status should equal (301)
       header("Location") should equal(s"https://localhost:7000/#!/item/${newsDbItem.get._id.toStringMongod}")
     }
   }
 
   test("should return 301 for known old legacy news urls with nor") {
-    get("/legacy/news/nor/125-flyttemeldinger_for_pensjonsavtaler") {
+    get("/legacy/pages/nor/125-flyttemeldinger_for_pensjonsavtaler") {
       status should equal (301)
       header("Location") should equal(s"https://localhost:7000/#!/item/${newsDbItem.get._id.toStringMongod}")
     }
   }
 
   test("shoukd return 301 for known old legacy idea urls") {
-    get("/legacy/idea/12;Rekommandert-sending-digitalt") {
+    get("/legacy/ideer/12;Rekommandert-sending-digitalt") {
       status should equal(301)
       header("Location") should equal(s"https://localhost:7000/#!/item/${ideaDbItem.get._id.toStringMongod}")
     }
   }
 
   test("should return 404 for unknown legacy urls") {
-    get("/legacy/news/1-sak_med_ugyldig_id") {
+    get("/legacy/pages/1-sak_med_ugyldig_id") {
       status should equal (404)
     }
   }
 
   test("should return 404 when legacy news url contains old id from idea") {
-    get("/legacy/idea/125-flyttemeldinger_for_pensjonsavtaler") {
+    get("/legacy/ideer/125-flyttemeldinger_for_pensjonsavtaler") {
       status should equal (404)
     }
   }
