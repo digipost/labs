@@ -2,7 +2,7 @@
     <div class="label">Idé</div>
     <div class="title"><%= item.title %></div>
     <%unsafe dp.item.avatar(item.author) %>
-    <div class="author">Idé fra <%= item.author.name %></div>
+    <div class="author">Idé fra <%= dp.item.firstName(item.author.name) %></div>
     <div class="score">
         <span class="score-<%= item.votes ? 'active' : 'inactive' %>">
             <i class="fa fa-thumbs-up"></i> <%= item.votes || 0 %></span>

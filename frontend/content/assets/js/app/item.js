@@ -25,3 +25,7 @@ dp.item.author = function(author) {
     var id = author.userId;
     return '<a class="author" href="#!/profiles/' + id + '">' + _.escape(author.name) + '</a>';
 };
+
+dp.item.firstName = function(name) {
+    return name.split(' ')[0];
+};
