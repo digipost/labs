@@ -80,7 +80,7 @@ a.tile:hover {
     background: #fff;
     background: rgba(255,255,255,0.9);
     box-shadow: 5px 0 0 0 rgba(255,255,255,0.9), -5px 0 0 0 rgba(255,255,255,0.9);
-    padding: 0.128em 0;
+    padding: 0.08em 0;
 }
 
 .tile:hover .tile-bg .title span {
