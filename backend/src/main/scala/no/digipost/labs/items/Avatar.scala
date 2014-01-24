@@ -9,10 +9,6 @@ object Avatar {
     val input = email.getOrElse(name)
     val hash = new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.trim.toLowerCase.getBytes)).toString(16)
     val avatar = s"https://secure.gravatar.com/avatar/$hash?d=identicon"
-    if(force) {
-      s"$avatar&f=y"
-    } else {
-      avatar
-    }
+    if(force) s"$avatar&f=y" else avatar
   }
 }
