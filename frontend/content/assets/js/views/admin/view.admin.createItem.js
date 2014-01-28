@@ -51,10 +51,17 @@ dp.views.admin.createItem = {
         if (_.isSet(fields.index)) data.index = parseInt(fields.index, 10);
         if (fields.author) data.author = fields.author;
         if (fields.url) data.url = fields.url;
+        var update = this.update;
+
         dp.api.save(data, {
-            update: this.update,
+            update: update,
             id: this.item.id
         }).then(function(item) {
+            if(update) {
+              dp.track.event(item.type, 'update');
+            } else {
+              dp.track.event(item.type, 'create');
+            }
             if (item.type === 'tweet') {
                 window.location = '#!/admin';
             } else {

@@ -31,10 +31,17 @@ dp.views.createIdea = {
             title: title,
             body: body
         };
+        var update = this.update;
+
         dp.api.save(data, {
-            update: this.update,
+            update: update,
             id: this.item.id
         }).then(function(item) {
+            if(update) {
+              dp.track.event(item.type, 'update');
+            } else {
+              dp.track.event(item.type, 'create');
+            }
             window.location = '#!/item/' + item.id;
         });
     },
