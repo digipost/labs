@@ -6,7 +6,7 @@ import spray.revolver.RevolverPlugin._
 object DigipostLabsBuild extends Build {
   val Organization = "no.digipost"
   val Name = "digipost-labs"
-  val Version = "1.0"
+  val Version = "1.1-SNAPSHOT"
   val ScalaVersion = "2.10.3"
   val ScalatraVersion = "2.2.2"
   val Json4SVersion = "3.2.5"
