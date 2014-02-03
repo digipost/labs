@@ -16,7 +16,7 @@ object AccessToken {
   case class IdToken(aud: String, exp: String, user_id: String, iss: String, nonce: String)
 
   object IdToken {
-    def apply(idTokenValue: String): IdToken = {
+    def parseBase64Json(idTokenValue: String): Try[IdToken] = Try {
       val decodedIdTokenValue = new String(Base64.decode(idTokenValue))
       parse(decodedIdTokenValue).extract[IdToken]
     }
@@ -34,10 +34,10 @@ object AccessToken {
     def validate(expected: String, actual: String, errorMsg: String): Try[Unit] = if (expected == actual) Success() else Failure(new Exception(errorMsg))
 
     for {
-      idToken <- accessToken.id_token.fold[Try[String]](Failure(new Exception("Missing id_token")))(Success(_))
+      idToken <- accessToken.id_token.fold[Try[String]](Failure(new Exception("Missing id_token")))(Success.apply)
       (idTokenHash, idTokenValue) <- IdToken.split(idToken)
       _ <- validate(idTokenHash, cryptoService.signWithHmacSha256(idTokenValue, settings.secret), "Invalid id_token hash")
-      idTokenObject = IdToken(idTokenValue)
+      idTokenObject <- IdToken.parseBase64Json(idTokenValue)
       _ <- validate(settings.clientId, idTokenObject.aud, "id_token param audience did not match")
       _ <- validate(nonce, idTokenObject.nonce, "id_token param nonce did not match")
     } yield ()
@@ -45,9 +45,9 @@ object AccessToken {
 
   def getUserId(accessToken: AccessToken): Try[String] = {
     for {
-      idToken <- accessToken.id_token.fold[Try[String]](Failure(new Exception("Missing id_token")))(Success(_))
+      idToken <- accessToken.id_token.fold[Try[String]](Failure(new Exception("Missing id_token")))(Success.apply)
       (idTokenHash, idTokenValue) <- IdToken.split(idToken)
-      idTokenObject = IdToken(idTokenValue)
+      idTokenObject <- IdToken.parseBase64Json(idTokenValue)
     } yield idTokenObject.user_id
   }
 }
