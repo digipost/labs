@@ -44,3 +44,5 @@ License
 
 Apache License, Version 2.0
 https://www.apache.org/licenses/LICENSE-2.0
+
+Images and logos for Posten and Digipost is (C) Posten Norge AS and not licensed under Apache License, Version 2.0.
