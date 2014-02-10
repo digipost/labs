@@ -39,6 +39,62 @@ Demo
 
 [Digipost Labs](https://labs.digipost.no)
 
+Install
+=======
+
+### Backend
+
+Install and run MongoDB:
+
+    $ cd git/labs/backend
+    $ sudo apt-get install mongodb
+    $ sudo mkdir -p /data/db
+    $ sudo chown $USER /data/db
+    $ mongod --setParameter textSearchEnabled=true
+
+Start the mongo shell and create the required collections:
+
+    $ /usr/bin/mongo
+    > show dbs
+    local   0.078125GB
+    > use labs
+    switched to db labs
+    > db.users.save({})
+    > db.sessions.save({})
+    > db.items.save({})
+    > show dbs
+    labs    0.203125GB
+    local   0.078125GB
+
+Create a dummy secret.conf file:
+
+    $ echo "labs {
+        oauth {
+            clientId = "OAUTH_ID_FROM_DIGIPOST"
+            secret = "SECRET"
+        }
+    }" > secret.conf
+
+Start the backend:
+
+    $ ./sbt
+    > run
+
+### Frontend
+
+Prepare with bower:
+
+    $ cd ../frontend
+    $ sudo npm install -g bower
+    $ ./bower
+
+Get Pacbot and fire up the frontend:
+
+    $ sudo npm install -g pacbot
+    $ pacbot -d
+
+Enjoy!
+
 License
 =======
 
