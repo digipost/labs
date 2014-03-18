@@ -73,21 +73,27 @@
 }
 
 #header ul a {
+  font-family: 'FoundryMonolineRegular',Arial,Helvetica,sans-serif;
+  text-transform: uppercase;
   color: #fff;
-  font-size: 1em;
+  font-size: 15px;
   font-weight: bold;
-  padding: 15px 15px;
+  padding: 17px 15px;
   margin: 0;
   display: block;
   float: left;
   text-decoration: none;
   text-shadow: none;
-  border-top: .4em solid #e32d22;
+  border-top: .3em solid #e32d22;
   -webkit-transition: all 100ms ease-in-out;
   -moz-transition: all 100ms ease-in-out;
   -ms-transition: all 100ms ease-in-out;
   -o-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
+}
+
+#header ul li.session-logged-in a {
+  text-transform: none;
 }
 
 #header .last a {
@@ -120,13 +126,21 @@
   display: none;
 }
 
+@media all and (max-width: 70em) {
+  #header ul a {
+    padding: 16px 10px;
+    font-size: 14px;
+  }
+}
+
 @media all and (max-width: 55em) {
   #header .end {
     display: none;
   }
 
   #header ul a {
-    padding: 15px 10px;
+    padding: 20px 10px;
+    font-size: 12px;
   }
 
   #header ul {
@@ -134,13 +148,17 @@
   }
 }
 
-@media all and (max-width: 44em) {
-  #header ul.first {
+@media all and (max-width: 40em) {
+  #header h1 {
     display: none;
+  }
+
+  #header ul.first {
+    left: 1em;
   }
 }
 
-@media all and (max-width: 34em) {
+@media all and (max-width: 30em) {
   #header h1 {
     display: block;
   }
@@ -150,7 +168,7 @@
   }
 }
 
-@media all and (max-width: 28em) {
+@media all and (max-width: 23em) {
   #header ul {
     display: none;
   }
@@ -158,6 +176,5 @@
   #header h1 {
     left: 50%;
     margin-left: -62px;
-    padding-left: 0;
   }
 }

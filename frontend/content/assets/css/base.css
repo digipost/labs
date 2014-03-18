@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'FoundryMonolineRegular';
+    src: url(/assets/fonts/foundmonreg-webfont.eot);
+    src: local('Foundry Monoline Regular'),local('Foundry Monoline Regular'),url(/assets/fonts/foundmonreg-webfont.woff) format('woff'),url(/assets/fonts/foundmonreg-webfont.ttf) format('truetype'),url(/assets/fonts/foundmonreg-webfont.svg#FoundryMonolineRegular) format('svg')
+}
+
+@font-face {
+    font-family: 'FoundryMonolineMedium';
+    src: url(/assets/fonts/foundmonmed-webfont.eot);
+    src: local('Foundry Monoline Medium'),local('Foundry Monoline Medium'),url(/assets/fonts/foundmonmed-webfont.woff) format('woff'),url(/assets/fonts/foundmonmed-webfont.ttf) format('truetype'),url(/assets/fonts/foundmonmed-webfont.svg#FoundryMonolineMedium) format('svg')
+}
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -215,6 +227,12 @@ hr {
 .bar i {
     display: inline-block;
     width: 1.5em;
+}
+
+@media (max-width: 800px) {
+  .ui-not-min {
+    display: none !important;
+  }
 }
 
 @media (max-width: 400px) {
