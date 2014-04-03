@@ -16,10 +16,10 @@ dp.views = {
  * Init js on page load.
  */
 $(function() {
+    dp.env.init();
     dp.session.init();
-    var getUser = dp.session.refreshUser();
     dp.scroll.init();
-    getUser.always(function () {
+    dp.session.refreshUser().always(function () {
         dispatch.start('#!/');
     });
 });

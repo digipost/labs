@@ -2,7 +2,6 @@
   "name": "digipost-labs",
   "dependencies": {
     "es5-shim": "2.x.x",
-    "html5shiv": "3.x.x",
     "underscore": "1.x.x",
     "underscore.string": "2.x.x",
     "dispatch": "1.x.x",

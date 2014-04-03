@@ -22,14 +22,14 @@ dp.api.type = function(options) {
         '/api/items/type/' + options.type :
         '/api/items');
     return dp.api.request({
-        method: 'get',
+        type: 'get',
         url: url
     });
 };
 
 dp.api.search = function(options) {
     return dp.api.request({
-        method: 'get',
+        type: 'get',
         url: '/api/search?query=' + encodeURIComponent(options.query)
     });
 };
@@ -39,7 +39,7 @@ dp.api.search = function(options) {
  */
 dp.api.user = function() {
     return dp.api.request({
-       method: 'get',
+       type: 'get',
        url: '/api/sessions/user'
     });
 };
@@ -49,7 +49,7 @@ dp.api.user = function() {
  */
 dp.api.item = function(options) {
     return dp.api.request({
-        method: 'get',
+        type: 'get',
         url: '/api/items/' + options.id
     });
 };
@@ -59,7 +59,7 @@ dp.api.item = function(options) {
  */
 dp.api.editableItem = function(options) {
     return dp.api.request({
-        method: 'get',
+        type: 'get',
         url: '/api/items/' + options.id + '/editable'
     });
 };
@@ -70,7 +70,7 @@ dp.api.editableItem = function(options) {
 dp.api.vote = function(options) {
     options.item.voted = true;
     return dp.api.request({
-        method: 'post',
+        type: 'post',
         url: '/api/items/' + options.item.id + '/votes',
         contentType: 'application/json'
     });
@@ -88,7 +88,7 @@ dp.api.save = function(data, options) {
         throw 'Invalid item type';
     }
     return dp.api.request({
-        method: 'post',
+        type: 'post',
         url: url,
         data: data,
         contentType: 'application/json'
@@ -97,7 +97,7 @@ dp.api.save = function(data, options) {
 
 dp.api.deleteItem = function(itemId) {
     return dp.api.request({
-        method: 'delete',
+        type: 'delete',
         url: '/api/items/' + itemId
     });
 };
@@ -107,7 +107,7 @@ dp.api.deleteItem = function(itemId) {
  */
 dp.api.comment = function(options) {
     return dp.api.request({
-        method: 'post',
+        type: 'post',
         url: '/api/items/' + options.item.id + '/comments',
         data: options.data,
         contentType: 'application/json'
@@ -119,7 +119,7 @@ dp.api.comment = function(options) {
  */
 dp.api.deleteComment = function(options) {
     return dp.api.request({
-        method: 'delete',
+        type: 'delete',
         url: '/api/items/' + options.itemId + '/comments/' + options.commentId
     });
 };
@@ -129,21 +129,21 @@ dp.api.deleteComment = function(options) {
  */
 dp.api.latestComments = function() {
   return dp.api.request({
-      method: 'get',
+      type: 'get',
       url: '/api/comments'
   });
 };
 
 dp.api.profile = function(options) {
     return dp.api.request({
-        method: 'get',
+        type: 'get',
         url: '/api/users/' + options.id + '/profile'
     });
 };
 
 dp.api.profiles = function() {
     return dp.api.request({
-        method: 'get',
+        type: 'get',
         url: '/api/users/profiles'
     });
 };
