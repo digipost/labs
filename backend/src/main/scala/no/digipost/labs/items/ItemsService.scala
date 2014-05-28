@@ -8,6 +8,7 @@ import no.digipost.labs.errorhandling.WebError
 import no.digipost.labs.links.{Relations, LinkBuilder}
 import Converters._
 import no.digipost.labs.login.SessionUser
+import java.util.Date
 
 
 class ItemsService(itemsRepo: ItemsRepository) {
@@ -17,8 +18,10 @@ class ItemsService(itemsRepo: ItemsRepository) {
   def findAll(user: Option[SessionUser], start: Option[Int], linkBuilder: LinkBuilder): Try[Items] =
     Try(findManyWithPaging(user, start, itemsRepo.findAll, linkBuilder))
 
-  def findById(id: String, user: Option[SessionUser]): Try[Item] =
-    Try(itemsRepo.findById(id).map(dbItemToItem(user))).flatMap(checkResult(404, "Not found"))
+  def findById(id: String, user: Option[SessionUser]): Try[Item] = {
+    val item = Try(itemsRepo.findById(id).map(dbItemToItem(user))).flatMap(checkResult(404, "Not found"))
+    item.map(i => i.copy(comments = i.comments.sortBy(_.date)(Ordering[Date].reverse)))
+  }
 
   def findByOldId(oldId: String, user: Option[SessionUser]): Try[Item] =
     Try(itemsRepo.findByOldId(oldId).map(dbItemToItem(user))).flatMap(checkResult(404, "Not found"))
