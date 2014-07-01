@@ -12,6 +12,7 @@ import scala.Some
 class MongoItemsRepository(items: MongoCollection) extends ItemsRepository with Repository with Logging {
 
   val maxResults = 50
+  val maxResultsLatestComments = 100
 
   def findAll(start: Option[Int]): (Seq[DbItem], Int) = {
     val (found, count) = findMany(MongoDBObject(), start)
@@ -91,7 +92,7 @@ class MongoItemsRepository(items: MongoCollection) extends ItemsRepository with 
       .flatten
       .toList
       .sortBy(_._2.date)(Ordering[Date].reverse)
-      .take(maxResults)
+      .take(maxResultsLatestComments)
   }
 
   override def deleteComment(parentId: String, commentId: String) = {
