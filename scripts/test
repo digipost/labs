@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+cd $(dirname $0)/../
+
+# Frontend
+jshint ./frontend/content/assets/js
+
+# Backend
+cd backend && ./sbt test

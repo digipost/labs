@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd $(dirname $0)/
+
+printf "\e]0;SCREEN-LABS\a"
+screen -c screen.config
