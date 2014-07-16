@@ -13,7 +13,7 @@ dp.support.isHandheld = function() {
 };
 
 dp.support.isOldIE = function() {
-    return dp.support.is('MSIE 7.0') || dp.support.is('MSIE 8.0');
+    return dp.support.is('MSIE 7.0') || dp.support.is('MSIE 8.0') || dp.support.is('MSIE 9.0');
 };
 
 dp.support.cssAnimations = function() {

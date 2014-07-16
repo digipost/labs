@@ -47,7 +47,7 @@ dp.views.comments = {
 
     addComment: function(view, comment) {
         scene(dp.views.comment, { item: view.item, comment: comment }, function(commentview) {
-            view.animate(commentview.el);
+            if(dp.support.cssAnimations()) view.animate(commentview.el);
             view.$('.comments-list').append(commentview.el);
             dp.scroll.to(commentview.el);
         });
