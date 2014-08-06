@@ -42,11 +42,15 @@ Demo
 Install
 =======
 
+### Clone repository
+
+    $ git clone https://github.com/digipost/labs.git
+
 ### Backend
 
 Install and run MongoDB:
 
-    $ cd git/labs/backend
+    $ cd labs/backend
     $ sudo apt-get install mongodb
     $ sudo mkdir -p /data/db
     $ sudo chown $USER /data/db
@@ -85,6 +89,7 @@ Start the backend:
 Prepare with bower:
 
     $ cd ../frontend
+    $ sudo apt-get install nodejs nodejs-dev npm
     $ sudo npm install -g bower
     $ ./bower
 
@@ -92,6 +97,24 @@ Get Pacbot and fire up the frontend:
 
     $ sudo npm install -g pacbot
     $ pacbot -d
+
+### Startup script
+
+We have supplied a startup script for development purposes. It starts a multi window screen with nodeproxy, mogodb, frontend and backend at the same time.
+Before running the script for the first time, you need to install node.js and npm, run the setup script to install npm packages, and edit the mongod.conf file to fit your db needs. The setup.sh script will promt for sudo password.
+
+Prepare the script dependencies:
+
+    $ cd labs/script
+    $ sudo apt-get install nodejs nodejs-dev npm
+    $ ./setup.sh
+	
+Run the script:
+
+    $ ./run
+
+Direct your brower to https://localhost:7000/
+
 
 Enjoy!
 
