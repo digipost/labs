@@ -86,7 +86,7 @@ Start the backend:
 
 ### Frontend
 
-Prepare with bower:
+The dependencies are already included in the repository, but you can update to newer versions with bower if necessary:
 
     $ cd ../frontend
     $ sudo apt-get install nodejs nodejs-dev npm
@@ -113,7 +113,7 @@ Run the script:
 
     $ ./run
 
-Direct your brower to https://localhost:7000/
+Direct your browser to https://localhost:7000/
 
 
 Enjoy!
