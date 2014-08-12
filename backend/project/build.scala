@@ -8,9 +8,9 @@ object DigipostLabsBuild extends Build {
   val Name = "digipost-labs"
   val Version = "1.1-SNAPSHOT"
   val ScalaVersion = "2.10.3"
-  val ScalatraVersion = "2.2.2"
-  val Json4SVersion = "3.2.5"
-  val JettyVersion = "8.1.13.v20130916"
+  val ScalatraVersion = "2.3.0"
+  val Json4SVersion = "3.2.10"
+  val JettyVersion = "9.2.1.v20140609"
   val LogbackVersion = "1.0.13"
 
   lazy val project = Project (
@@ -36,8 +36,10 @@ object DigipostLabsBuild extends Build {
         "org.slf4j" % "jcl-over-slf4j" % "1.7.5",
         "org.eclipse.jetty" % "jetty-webapp" % JettyVersion,
         "org.eclipse.jetty" % "jetty-nosql" % JettyVersion exclude("org.mongodb", "mongo-java-driver"),
-        "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "provided;test" artifacts Artifact("javax.servlet", "jar", "jar"),
-        "org.openid4java" % "openid4java" % "0.9.7"
+        //"org.eclipse.jetty.orbit" % "javax.servlet" % "3.1.0" % "provided;test" artifacts Artifact("javax.servlet", "jar", "jar"),
+        "org.eclipse.jetty"       %  "jetty-servlet" % JettyVersion % "provided;test",
+        "org.openid4java" % "openid4java" % "0.9.7",
+        "com.typesafe" % "config" % "1.2.1"
       ),
       mainClass in Compile := Some("no.digipost.labs.LabsMain")
     )

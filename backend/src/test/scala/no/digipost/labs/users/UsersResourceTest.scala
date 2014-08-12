@@ -1,14 +1,11 @@
 package no.digipost.labs.users
 
-import org.scalatra.test.scalatest.ScalatraSuite
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
+import no.digipost.labs.users.SessionHelper._
 import org.bson.types.ObjectId
 import org.json4s.jackson.JsonMethods._
-import scala.Some
-import SessionHelper._
+import org.scalatra.test.scalatest.ScalatraFunSuite
 
-class UsersResourceTest extends ScalatraSuite with FunSuite with ShouldMatchers {
+class UsersResourceTest extends ScalatraFunSuite {
   val usersRepo = new TestUsersRepository
 
   addServlet(new UsersResource(usersRepo), "/users/*")

@@ -8,7 +8,7 @@ import Headers._
 import org.json4s.jackson.JsonMethods._
 import SessionHelper._
 
-class SessionsResourceTest extends ScalatraSuite with FunSuite {
+class SessionsResourceTest extends ScalatraFunSuite {
   addServlet(sessionServletWithMocks, "/sessions/*")
 
   test("successful login with Digipost") {

@@ -1,16 +1,13 @@
 package no.digipost.labs.legacy
 
-import org.scalatra.test.scalatest.ScalatraSuite
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatra.test.scalatest.{ScalatraFunSuite, ScalatraSuite}
 import no.digipost.labs.items._
 import no.digipost.labs.Settings
 import org.bson.types.ObjectId
 import no.digipost.labs.items.DbItem
-import scala.Some
 import java.util.Date
 
-class LegacyRedirectResourceTest extends ScalatraSuite with FunSuite with ShouldMatchers {
+class LegacyRedirectResourceTest extends ScalatraFunSuite {
   val itemsRepo = new TestItemsRepository
 
   val settings = new Settings(Settings.load().config)

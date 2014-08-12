@@ -1,16 +1,17 @@
 package no.digipost.labs
-import org.scalatra.servlet.ScalatraListener
-import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.webapp.{Configuration, WebAppContext}
-import org.eclipse.jetty.nosql.mongodb.{MongoSessionIdManager, MongoSessionManager}
-import org.eclipse.jetty.server.session.SessionHandler
-import com.mongodb.casbah.Imports._
-import scala.concurrent.duration._
-import javax.servlet.DispatcherType
-import com.mongodb.DBCollection
-import no.digipost.labs.util.ResponseTimeFilter
 import java.net.InetSocketAddress
-import java.net.InetAddress
+import javax.servlet.DispatcherType
+
+import com.mongodb.DBCollection
+import com.mongodb.casbah.Imports._
+import no.digipost.labs.util.ResponseTimeFilter
+import org.eclipse.jetty.nosql.mongodb.{MongoSessionIdManager, MongoSessionManager}
+import org.eclipse.jetty.server.Server
+import org.eclipse.jetty.server.session.SessionHandler
+import org.eclipse.jetty.webapp.{Configuration, WebAppContext}
+import org.scalatra.servlet.ScalatraListener
+
+import scala.concurrent.duration._
 
 object LabsMain {
   def main(args: Array[String]) {
@@ -45,7 +46,6 @@ object LabsMain {
   def createMongoIdManager(server: Server, sessions: DBCollection): MongoSessionIdManager = {
     val idMgr = new MongoSessionIdManager(server, sessions)
     idMgr.setWorkerName("labs")
-    idMgr.setScavengeDelay(1.day.toMillis)
     idMgr.setScavengePeriod(1.hour.toMillis)
     idMgr.setPurgeInvalidAge(1.day.toMillis)
     idMgr.setPurgeValidAge(0)

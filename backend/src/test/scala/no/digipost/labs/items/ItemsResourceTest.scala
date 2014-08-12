@@ -1,6 +1,5 @@
 package no.digipost.labs.items
 
-import org.scalatest.FunSuite
 import org.scalatra.test.scalatest._
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
@@ -8,7 +7,6 @@ import org.json4s.jackson.Serialization
 import no.digipost.labs.security.Headers
 import Headers.X_CSRF_Token
 import org.scalatra.test.HttpComponentsClient
-import org.scalatest.matchers.ShouldMatchers
 import org.bson.types.ObjectId
 import no.digipost.labs.users.SessionHelper
 import SessionHelper._
@@ -16,7 +14,7 @@ import java.util.Date
 import no.digipost.labs.security.Headers
 import no.digipost.labs.errorhandling.Error
 
-class ItemsResourceTest extends ScalatraSuite with FunSuite with ShouldMatchers {
+class ItemsResourceTest extends ScalatraFunSuite {
   val itemsRepo = new TestItemsRepository
 
   private val itemWithBody = DbItem(new ObjectId(), ItemType.news, new Date, author = "Test Testesen", body = "body", source = Some("Original source"))
@@ -161,10 +159,10 @@ class ItemsResourceTest extends ScalatraSuite with FunSuite with ShouldMatchers 
       val headers = Map("Content-Type" -> "application/json", X_CSRF_Token -> csrfToken)
       val tweet = TweetInput("https://twitter.com", "@froden", "Digipost er best, ingen protest!")
       post("/tweets", Serialization.write(tweet).getBytes, headers) {
-        status must be(201)
+        status should be(201)
         val item = parse(body).extract[Item]
-        item.url must be(Some("https://twitter.com"))
-        item.author.name must be("@froden")
+        item.url should be(Some("https://twitter.com"))
+        item.author.name should be("@froden")
       }
     }
   }
