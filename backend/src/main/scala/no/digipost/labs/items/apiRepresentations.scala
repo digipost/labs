@@ -6,13 +6,15 @@ import java.util.Date
  * INPUT REPRESENTATIONS
  */
 
-case class IdeaInput(title: String, body: String, status: Option[String])
+sealed trait Input
 
-case class NewsInput(title: String, body: String, index: Option[Int] = None, imageUrl: Option[String] = None)
+final case class IdeaInput(title: String, body: String, status: Option[String]) extends Input
 
-case class TweetInput(url: String, author: String, body: String)
+final case class NewsInput(title: String, body: String, index: Option[Int] = None, imageUrl: Option[String] = None) extends Input
 
-case class CommentInput(body: String)
+final case class TweetInput(url: String, author: String, body: String) extends Input
+
+final case class CommentInput(body: String) extends Input
 
 
 

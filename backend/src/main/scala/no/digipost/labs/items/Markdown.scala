@@ -5,7 +5,5 @@ import org.pegdown.Extensions._
 
 object Markdown {
 
-  def markdownToHtml[T](item: T): String = item match {
-    case NewsInput(_, body, _, _) => new PegDownProcessor(ALL).markdownToHtml(body)
-  }
+  def markdownToHtml(item: String): String = new PegDownProcessor(ALL).markdownToHtml(item)
 }

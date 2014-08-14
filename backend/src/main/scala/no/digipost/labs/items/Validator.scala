@@ -1,14 +1,12 @@
 package no.digipost.labs.items
 
-import scala.util.Try
-import scala.util.Success
-import scala.util.Failure
-import scala.Some
 import no.digipost.labs.errorhandling.WebError
+
+import scala.util.{Failure, Success, Try}
 
 object Validator {
 
-  def validate[T](item: T): Try[T] = item match {
+  def validate[T <: Input](item: T): Try[T] = item match {
     case NewsInput(title, body, _, _) => validate(item, notEmpty(title, "title"), notEmpty(body, "body"))
     case TweetInput(url, author, body) => validate(item, notEmpty(url, "title"), notEmpty(author, "author"), noMarkup(author, "author"), notEmpty(body, "body"))
     case IdeaInput(title, body, status) => validate(item, notEmpty(title, "title"), notEmpty(body, "body"))

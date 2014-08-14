@@ -1,14 +1,13 @@
 package no.digipost.labs.items
 
-import scala.util.Try
-import scala.util.Failure
-import scala.Some
-import scala.util.Success
-import no.digipost.labs.errorhandling.WebError
-import no.digipost.labs.links.{Relations, LinkBuilder}
-import Converters._
-import no.digipost.labs.login.SessionUser
 import java.util.Date
+
+import no.digipost.labs.errorhandling.WebError
+import no.digipost.labs.items.Converters._
+import no.digipost.labs.links.{LinkBuilder, Relations}
+import no.digipost.labs.login.SessionUser
+
+import scala.util.{Failure, Success, Try}
 
 
 class ItemsService(itemsRepo: ItemsRepository) {
@@ -32,8 +31,8 @@ class ItemsService(itemsRepo: ItemsRepository) {
   def createNews(news: NewsInput, user: SessionUser): Try[Item] =
     for {
       _ <- checkAdmin(user)
-      validated <- Validator.validate(news)
-      htmlBody = Markdown.markdownToHtml(validated)
+      validated @ NewsInput(_, body, _, _) <- Validator.validate(news)
+      htmlBody = Markdown.markdownToHtml(body)
       stored <- Try(itemsRepo.insert(newsToDbItem(validated, user, htmlBody)))
       resultItem <- checkResult("Unable to create News")(stored)
     } yield dbItemToItem(Some(user))(resultItem)
@@ -41,8 +40,8 @@ class ItemsService(itemsRepo: ItemsRepository) {
   def updateNews(news: NewsInput, id: String, user: SessionUser): Try[Item] =
     for {
       _ <- checkAdmin(user)
-      validated <- Validator.validate(news)
-      htmlBody = Markdown.markdownToHtml(validated)
+      validated @ NewsInput(_, body, _, _) <- Validator.validate(news)
+      htmlBody = Markdown.markdownToHtml(body)
       stored <- Try(itemsRepo.update(newsToDbItem(validated, user, htmlBody), id))
       resultItem <- checkResult("Unable to update News")(stored)
     } yield dbItemToItem(Some(user))(resultItem)
@@ -56,7 +55,7 @@ class ItemsService(itemsRepo: ItemsRepository) {
   def createIdea(idea: IdeaInput, user: SessionUser): Try[Item] = {
     for {
     //Only admin users are allowed to set status for new ideas
-      _ <- if (idea.status.isDefined) checkAdmin(user) else Success()
+      _ <- if (idea.status.isDefined) checkAdmin(user) else Success(Unit)
       validated <- Validator.validate(idea)
       stored <- Try(itemsRepo.insert(ideaToDbItem(validated, user)))
       resultItem <- checkResult("Unable to create Idea")(stored)
@@ -133,5 +132,5 @@ class ItemsService(itemsRepo: ItemsRepository) {
     case None => Failure(WebError(status, message))
   }
 
-  private def checkAdmin(user: SessionUser): Try[Unit] = if (user.admin) Success() else Failure(WebError(403, "Forbidden"))
+  private def checkAdmin(user: SessionUser): Try[Unit] = if (user.admin) Success(Unit) else Failure(WebError(403, "Forbidden"))
 }

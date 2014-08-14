@@ -21,6 +21,7 @@ object DigipostLabsBuild extends Build {
       name := Name,
       version := Version,
       scalaVersion := ScalaVersion,
+      scalacOptions ++= Seq("-deprecation"),
       resolvers += Classpaths.typesafeReleases,
       libraryDependencies ++= Seq(
         "org.scalatra" %% "scalatra" % ScalatraVersion,
