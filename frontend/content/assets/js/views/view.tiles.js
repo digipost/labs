@@ -53,7 +53,7 @@ dp.views.tiles = {
 
     appendItems: function(view, items) {
         _.each(items, function(item) {
-            scene(dp.views.tile, { item: item }, function(itemview) {
+            scene(dp.views.tile, { item: item, type: view.type  }, function(itemview) {
                 view.$('.tiles-inner').append(itemview.el);
             });
         });

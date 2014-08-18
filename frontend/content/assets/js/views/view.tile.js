@@ -20,10 +20,21 @@ dp.views.tile = {
             view.$('.finished').show();
             view.$('.finished-inner').show();
         }
-        if (view.item.type !== 'tweet' && !_.isEmpty(view.item.url)) {
+        if (view.item.type !== 'tweet' && view.type !== 'news' && !_.isEmpty(view.item.url)) {
             view.$('.tile-inner').addClass('tile-bg')
                 .attr('style', 'background-image: url("'+ _.escape(view.item.url) +'"); background-size: cover;');
             view.$('.tile-bg-lower').removeClass('hide');
+        }
+        if (view.type === 'news') {
+            view.$('.tile').hover(function(){
+                view.$('.tile-inner').addClass('tile-bg')
+                    .attr('style', 'background-image: url("'+ _.escape(view.item.url) +'"); background-size: cover;');
+                view.$('.tile-bg-lower').removeClass('hide');
+            }, function(){
+                view.$('.tile-inner').addClass('tile-bg')
+                    .attr('style', '');
+                view.$('.tile-bg-lower').addClass('hide');
+            });
         }
     },
 
