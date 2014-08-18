@@ -1,5 +1,7 @@
 package no.digipost.labs.users
 
+import scala.language.postfixOps
+
 import scala.collection.mutable.ListBuffer
 import java.util.Date
 
@@ -8,9 +10,9 @@ class TestUsersRepository extends UsersRepository {
 
   override def findById(id: String): Option[DbUser] = users.find(_._id == id)
 
-  override def findByDigipostId(id: String): Option[DbUser] = users.find(_.digipostId.exists(_ == id))
+  override def findByDigipostId(id: String): Option[DbUser] = users.find(_.digipostId.contains(id))
 
-  override def findByOpenId(id: String): Option[DbUser] = users.find(_.openidUrl.exists(_ == id))
+  override def findByOpenId(id: String): Option[DbUser] = users.find(_.openidUrl.contains(id))
 
   override def insert(user: DbUser): Option[DbUser] = {
     users += user

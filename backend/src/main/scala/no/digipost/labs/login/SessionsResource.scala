@@ -48,7 +48,7 @@ class SessionsResource(settings: Settings, loginWithDigipost: LoginWithDigipost,
     digipostUser.flatMap { u =>
       userRepository.findByDigipostId(u.id) match {
         case Some(dbUser) => {
-          val updatedDbUser = userRepository.update(digipostUserToDbUser(u), dbUser._id.toStringMongod)
+          val updatedDbUser = userRepository.update(digipostUserToDbUser(u), dbUser._id.toHexString)
           updatedDbUser.map(createSessionUserAndUpdateLastLogin)
         }
         case None => userRepository.insert(digipostUserToDbUser(u)).map(createSessionUserAndUpdateLastLogin)
@@ -106,7 +106,7 @@ class SessionsResource(settings: Settings, loginWithDigipost: LoginWithDigipost,
         openIdUser.flatMap { u =>
           userRepository.findByOpenId(u.id) match {
             case Some(dbUser) => {
-              val updatedDbUser = userRepository.update(openIdUserToDbUser(u), dbUser._id.toStringMongod)
+              val updatedDbUser = userRepository.update(openIdUserToDbUser(u), dbUser._id.toHexString)
               updatedDbUser.map(createSessionUserAndUpdateLastLogin)
             }
             case None => userRepository.insert(openIdUserToDbUser(u)).map(createSessionUserAndUpdateLastLogin)
@@ -139,7 +139,7 @@ class SessionsResource(settings: Settings, loginWithDigipost: LoginWithDigipost,
 
   private def createSessionUserAndUpdateLastLogin(dbUser: DbUser) = {
     Future {
-      userRepository.updateLastLogin(dbUser._id.toStringMongod, DateTime.now.toDate)
+      userRepository.updateLastLogin(dbUser._id.toHexString, DateTime.now.toDate)
     }
     SessionUser(dbUser, loginWithDigipost.randomNonce)
   }

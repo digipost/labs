@@ -1,5 +1,7 @@
 package no.digipost.labs.items
 
+import scala.language.postfixOps
+
 import scala.collection.mutable.ListBuffer
 import java.util.Date
 import org.bson.types.ObjectId
@@ -18,7 +20,7 @@ class TestItemsRepository extends ItemsRepository {
     items.find(_._id == id)
   }
 
-  def findByOldId(oldId: String): Option[DbItem] = items.find(_.oldId.exists(_ == oldId))
+  def findByOldId(oldId: String): Option[DbItem] = items.find(_.oldId.contains(oldId))
 
   def findByType(t: String, start: Option[Int] = Some(0)): (Seq[DbItem], Int) = {
     val found = items.filter(_.`type`== t).drop(start.getOrElse(0))
@@ -39,10 +41,10 @@ class TestItemsRepository extends ItemsRepository {
     updateItem(parentId, i => i.copy(comments = comment :: i.comments))
   }
 
-  def findLatestComments(): Seq[(String, DbComment)] = items.flatMap(item => item.comments.map(comment => (item._id.toStringMongod, comment))).sortBy(_._2.date)(Ordering[Date].reverse)
+  def findLatestComments(): Seq[(String, DbComment)] = items.flatMap(item => item.comments.map(comment => (item._id.toHexString, comment))).sortBy(_._2.date)(Ordering[Date].reverse)
 
   override def deleteComment(parentId: String, commentId: String): Option[DbItem] = {
-    updateItem(parentId, i => i.copy(comments = i.comments.filter(_._id.toStringMongod != commentId)))
+    updateItem(parentId, i => i.copy(comments = i.comments.filter(_._id.toHexString != commentId)))
   }
 
   override def addVote(itemId: String, userId: String) = {

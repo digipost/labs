@@ -17,7 +17,7 @@ class UsersResourceTest extends ScalatraFunSuite {
     val user = getUser(2)
     user.profile should be ('defined)
 
-    get(s"/users/${user._id.toStringMongod}/profile") {
+    get(s"/users/${user._id.toHexString}/profile") {
       status should equal (200)
       val profile = parse(body).extract[Profile]
       assert(profile.name === user.name)
@@ -30,7 +30,7 @@ class UsersResourceTest extends ScalatraFunSuite {
     val user = getUser(1)
     user.profile should not be 'defined
 
-    get(s"/users/${user._id.toStringMongod}/profile") {
+    get(s"/users/${user._id.toHexString}/profile") {
       status should equal (200)
       val profile = parse(body).extract[Profile]
       assert(profile.name === user.name)
@@ -41,7 +41,7 @@ class UsersResourceTest extends ScalatraFunSuite {
   }
 
   test("should get 404 when requesting profile for a non-existing user") {
-    get(s"/users/${ new ObjectId().toStringMongod}/profile") {
+    get(s"/users/${ new ObjectId().toHexString}/profile") {
       status should equal (404)
     }
   }

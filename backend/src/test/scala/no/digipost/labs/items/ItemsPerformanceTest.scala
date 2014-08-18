@@ -1,11 +1,11 @@
 package no.digipost.labs.items
 
-import org.scalatest.FlatSpec
+import org.scalatest.{Matchers, FlatSpec}
 import org.scalatest.matchers.ShouldMatchers
 import dispatch._
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class ItemsPerformanceTest extends FlatSpec with ShouldMatchers {
+class ItemsPerformanceTest extends FlatSpec with Matchers {
 
   "All items" should "load fast" ignore  {
     val startTime = System.currentTimeMillis()

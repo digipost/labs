@@ -110,7 +110,7 @@ class MongoItemsRepository(items: MongoCollection) extends ItemsRepository with 
   }
 
   def toComments(obj: DBObject): Option[List[(String, DbComment)]] = {
-    val parentIdJson = obj.get("_id").asInstanceOf[ObjectId].toStringMongod
+    val parentIdJson = obj.get("_id").asInstanceOf[ObjectId].toHexString
     val commentsJson = obj.get("comments").asInstanceOf[BSONObject]
     if (commentsJson.keySet().size() == 0) {
       None

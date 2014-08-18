@@ -1,12 +1,10 @@
 package no.digipost.labs.oauth
 
-import scala.util.Try
-import org.json4s.DefaultFormats
-import scala.Predef.String
 import com.ning.http.util.Base64
+import org.json4s.DefaultFormats
 import org.json4s.jackson.JsonMethods._
-import scala.util.Success
-import scala.util.Failure
+
+import scala.util.{Failure, Success, Try}
 
 case class AccessToken(access_token: String, refresh_token: String, expires_in: String, token_type: String, id_token: Option[String])
 
@@ -31,7 +29,7 @@ object AccessToken {
   }
 
   def validate(accessToken: AccessToken, nonce: String, settings: OAuthSettings, cryptoService: CryptoService): Try[Unit] = {
-    def validate(expected: String, actual: String, errorMsg: String): Try[Unit] = if (expected == actual) Success() else Failure(new Exception(errorMsg))
+    def validate(expected: String, actual: String, errorMsg: String): Try[Unit] = if (expected == actual) Success(Unit) else Failure(new Exception(errorMsg))
 
     for {
       idToken <- accessToken.id_token.fold[Try[String]](Failure(new Exception("Missing id_token")))(Success.apply)

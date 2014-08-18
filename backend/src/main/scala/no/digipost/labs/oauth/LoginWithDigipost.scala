@@ -36,7 +36,7 @@ class LoginWithDigipost(oauthService: OAuthService, digipostService: DigipostSer
   private def validateToken(token: Token, accessToken: AccessToken, nonce: String, settings: OAuthSettings, cryptoService: CryptoService): Try[Unit] = {
     token match {
       case AuthorisationCodeToken(_) => AccessToken.validate(accessToken, nonce, settings, cryptoService)
-      case RefreshToken(_) => Success()
+      case RefreshToken(_) => Success(Unit)
     }
   }
 }

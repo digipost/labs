@@ -17,9 +17,7 @@ class ScalatraBootstrap extends LifeCycle with Logging {
     val mongoClient = MongoClient(settings.mongoHost, settings.mongoPort)
     val db = mongoClient(settings.mongoDatabase)
     val itemsColl = db("items")
-    itemsColl.ensureIndex(MongoDBObject("title" -> "text", "body" -> "text"), MongoDBObject("default_language" -> "norwegian"))
-    itemsColl.ensureIndex(MongoDBObject("type" -> 1))
-    itemsColl.ensureIndex(MongoDBObject("index" -> -1, "date" -> -1))
+    itemsCollIndexes.map(itemsColl.ensureIndex(_))
     val itemsRepo = new MongoItemsRepository(itemsColl)
     val userColl = db("users")
     val usersRepo = new MongoUsersRepository(userColl)
@@ -31,4 +29,10 @@ class ScalatraBootstrap extends LifeCycle with Logging {
     
     context.mount(new LegacyRedirectResource(settings, itemsService), "/legacy/*")
   }
+
+  lazy val itemsCollIndexes = List(
+    MongoDBObject("title" -> "text", "body" -> "text"), MongoDBObject("default_language" -> "norwegian"),
+    MongoDBObject("type" -> 1),
+    MongoDBObject("index" -> -1, "date" -> -1)
+  )
 }

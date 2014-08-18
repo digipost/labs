@@ -15,5 +15,5 @@ case class SessionUser(id: String, name: String, emailAddress: Option[String], d
 object SessionUser {
   val sessionKey = "logged_in_user"
 
-  def apply(user: DbUser, csrfToken: String): SessionUser = SessionUser(user._id.toStringMongod, user.name, user.email, user.digipostAddress, user.admin, csrfToken)
+  def apply(user: DbUser, csrfToken: String): SessionUser = SessionUser(user._id.toHexString, user.name, user.email, user.digipostAddress, user.admin, csrfToken)
 }

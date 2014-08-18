@@ -29,3 +29,9 @@ case class DbItem(_id: ObjectId,
                   index: Option[Int] = None,
                   comments: List[DbComment] = List(),
                   oldId: Option[String] = None)
+
+object ItemType {
+  val news = "news"
+  val idea = "idea"
+  val tweet = "tweet"
+}

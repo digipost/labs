@@ -51,7 +51,7 @@ class ItemsResourceTest extends ScalatraFunSuite {
     get(s"/items/${itemWithBody._id}") {
       status should equal (200)
       val item = parse(body).extract[Item]
-      assert(item.id === itemWithBody._id.toStringMongod)
+      assert(item.id === itemWithBody._id.toHexString)
       assert(item.source === None)
     }
   }
@@ -68,7 +68,7 @@ class ItemsResourceTest extends ScalatraFunSuite {
       get(s"/items/${itemWithBody._id}/editable") {
         status should equal (200)
         val item = parse(body).extract[Item]
-        assert(item.id === itemWithBody._id.toStringMongod)
+        assert(item.id === itemWithBody._id.toHexString)
         assert(item.source === Some("Original source"))
       }
     }
@@ -80,7 +80,7 @@ class ItemsResourceTest extends ScalatraFunSuite {
       get(s"/items/${itemWithoutSource._id}/editable") {
         status should equal (200)
         val item = parse(body).extract[Item]
-        assert(item.id === itemWithoutSource._id.toStringMongod)
+        assert(item.id === itemWithoutSource._id.toHexString)
         assert(item.body === "body")
         assert(item.source === Some("body"))
       }

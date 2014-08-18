@@ -68,24 +68,24 @@ object Converters {
 
   def dbCommentToComment(parentId: String)(c: DbComment): Comment =
     Comment(
-      id = c._id.toStringMongod,
-      author = Author(c.userId.map(_.toStringMongod), c.author, Avatar.emailToAvatar(c.email, c.author), c.admin),
+      id = c._id.toHexString,
+      author = Author(c.userId.map(_.toHexString), c.author, Avatar.emailToAvatar(c.email, c.author), c.admin),
       body = c.body,
       date = c.date,
       itemId = parentId)
 
   def dbItemToItem(u: Option[SessionUser])(i: DbItem): Item =
-    Item(i._id.toStringMongod,
+    Item(i._id.toHexString,
       i.`type`,
       i.date,
       i.title,
       i.body,
       u.filter(_.admin).map(_ => i.source.getOrElse(i.body)),
-      Author(i.userId.map(_.toStringMongod), i.author, Avatar.emailToAvatar(i.email, i.author), i.admin.getOrElse(false)),
+      Author(i.userId.map(_.toHexString), i.author, Avatar.emailToAvatar(i.email, i.author), i.admin.getOrElse(false)),
       i.votes.size,
-      u.exists(u => i.votes.map(_.toStringMongod).contains(u.id)),
+      u.exists(u => i.votes.map(_.toHexString).contains(u.id)),
       i.url,
       i.status.map(_.toString),
       i.index,
-      i.comments.map(Converters.dbCommentToComment(i._id.toStringMongod)))
+      i.comments.map(Converters.dbCommentToComment(i._id.toHexString)))
 }

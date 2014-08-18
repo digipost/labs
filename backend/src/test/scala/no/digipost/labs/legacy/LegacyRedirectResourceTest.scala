@@ -36,21 +36,21 @@ class LegacyRedirectResourceTest extends ScalatraFunSuite {
   test("should return 301 for known old legacy news urls") {
     get("/legacy/pages/125-flyttemeldinger_for_pensjonsavtaler") {
       status should equal (301)
-      header("Location") should equal(s"https://localhost:7000/#!/item/${newsDbItem.get._id.toStringMongod}")
+      header("Location") should equal(s"https://localhost:7000/#!/item/${newsDbItem.get._id.toHexString}")
     }
   }
 
   test("should return 301 for known old legacy news urls with nor") {
     get("/legacy/pages/nor/125-flyttemeldinger_for_pensjonsavtaler") {
       status should equal (301)
-      header("Location") should equal(s"https://localhost:7000/#!/item/${newsDbItem.get._id.toStringMongod}")
+      header("Location") should equal(s"https://localhost:7000/#!/item/${newsDbItem.get._id.toHexString}")
     }
   }
 
   test("shoukd return 301 for known old legacy idea urls") {
     get("/legacy/ideer/12;Rekommandert-sending-digitalt") {
       status should equal(301)
-      header("Location") should equal(s"https://localhost:7000/#!/item/${ideaDbItem.get._id.toStringMongod}")
+      header("Location") should equal(s"https://localhost:7000/#!/item/${ideaDbItem.get._id.toHexString}")
     }
   }
 
