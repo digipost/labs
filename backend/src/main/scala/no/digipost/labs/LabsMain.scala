@@ -20,6 +20,7 @@ object LabsMain {
     val server = new Server(InetSocketAddress.createUnresolved("127.0.0.1", port))
 
     val context = new WebAppContext()
+    context.setResourceBase(".")
 
     //Setup persistent sessions using mongodb
     val settings = Settings.loadFromSystemEnvironmentProperty()
