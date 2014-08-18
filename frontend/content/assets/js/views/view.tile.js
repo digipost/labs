@@ -25,7 +25,7 @@ dp.views.tile = {
                 .attr('style', 'background-image: url("'+ _.escape(view.item.url) +'"); background-size: cover;');
             view.$('.tile-bg-lower').removeClass('hide');
         }
-        if (view.type === 'news') {
+        if (view.type === 'news' && !_.isEmpty(view.item.url)) {
             view.$('.tile').hover(function(){
                 view.$('.tile-inner').addClass('tile-bg')
                     .attr('style', 'background-image: url("'+ _.escape(view.item.url) +'"); background-size: cover;');
