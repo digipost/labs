@@ -5,7 +5,7 @@ Dispatch.js is a micro JS library for routing browser hash change events to hand
 
 ## Example
 
-The following snippet will alert `"Hello"` when the page is loaded, and `"Hello world"` when the location hash changes to `"#!/hello/world"`.
+The following snippet will alert `"Hello"` when the page is loaded, and `"Hello world"` when the location hash changes to `"#/hello/world"`.
 
 
     dispatch.on("/", function() {
@@ -24,7 +24,7 @@ The location hash can be changed in JS:
 
 or by linking to the appropriate location:
 
-    <a href="#!/hello/world">hello</a>
+    <a href="#/hello/world">hello</a>
 
 ## API
 
@@ -65,3 +65,7 @@ operations before or after routes are run.
 ## Support
 
 Tested in IE8+ and the latest two versions of other popular browsers.
+
+## License
+
+MIT. See LICENSE.

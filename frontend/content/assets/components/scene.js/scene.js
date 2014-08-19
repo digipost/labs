@@ -10,7 +10,7 @@
      */
     var scene = root.scene = function(proto, data, callback) {
         var view = instance(proto || {}, data || {});
-        render(view, function() {
+        return render(view, function() {
             if (scene.after) scene.after(view);
             if (callback) callback(view);
         });
@@ -128,7 +128,7 @@
      * Internal: Render the HTML of a view.
      */
     var render = function(view, callback) {
-        compiler(view, function(comp) {
+        return compiler(view, function(comp) {
             if (scene.before) scene.before(view);
             if (view.before) view.before(view);
             el(view, invoke({ c: comp }, 'c', view));
@@ -152,6 +152,7 @@
             C[view.template] = scene.compile(html);
             callback(C[view.template]);
         });
+        return view;
     };
 
     /*
@@ -166,7 +167,7 @@
         };
         view.set = function(selector, proto, data, callback) {
             var subview = instance(proto || {}, data || {});
-            render(subview, function() {
+            return render(subview, function() {
                 scene.insert(view.el, selector, subview.el);
                 if (scene.after) scene.after(subview);
                 if (callback) callback(subview);

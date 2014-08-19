@@ -4,9 +4,13 @@
     var dispatch = window.dispatch = {}, internal = {},
         id, routes, names, paths, handlers;
 
+    /*
+     * Regex matchers.
+     */
     var escapeString = /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,
         queryMatch   = /\?([^#]*)?$/,
         prefixMatch  = /^[^#]*#/,
+        spaceMatch   = /\s+/g,
         fragMatch    = /:([^\/]+)/g,
         fragReplace  = '([^\\/]+)',
         starMatch    = /\\\*([^\/]+)/g,
@@ -77,10 +81,63 @@
      * @path: The route to run.
      */
     dispatch.go = function(path) {
-        var current = internal.parse(window.location.hash, {}).path;
-        var target  = internal.parse(path, {}).path;
+        var current = internal.path(window.location.hash, {}).path;
+        var target  = internal.path(path, {}).path;
         if (current === target) { dispatch.run(target); }
         else { window.location.hash = target; }
+    };
+
+    /*
+     * Get the current value of a named parameter.
+     */
+    dispatch.get = function(param) {
+        param = '' + param;
+        if (!param) return;
+
+        // Find matching route
+        var hash = window.location.hash;
+        var prev = internal.path(hash, {});
+        var next = dispatch.route(hash);
+        if (!next) return;
+        prev = prev.path.split('/');
+        next = next.path.split('/');
+
+        // Find value of named param
+        for (var i = 0; i < next.length; i++) {
+            if (next[i] === param) return prev[i];
+        }
+    };
+
+    /*
+     * Set (replace) a named parameter in the current path,
+     * without running any of the matching handlers.
+     *
+     * @param: The parameter to replace (e.g. ":a").
+     * @value: The new path value to insert.
+     */
+    dispatch.set = dispatch.replace = function(param, value) {
+        param = '' + param;
+        value = '' + value;
+        if (!param || !value) return;
+
+        // Find matching route
+        var hash = window.location.hash;
+        var prev = internal.path(hash, {});
+        var next = dispatch.route(hash);
+        if (!next) return;
+        prev = prev.path.split('/');
+        next = next.path.split('/');
+
+        // Replace first matching param
+        for (var i = 0; i < next.length; i++) {
+            internal.skipNextChange = false;
+            if (next[i] !== param) continue;
+            if (prev[i] === value) return;
+            prev[i] = value;
+            internal.skipNextChange = true;
+            window.location.replace('#' + prev.join('/'));
+            return;
+        }
     };
 
     /*
@@ -106,18 +163,22 @@
         if (!path) { path = window.location.hash; }
         if (!params) { params = {}; }
 
+        // Parse previous and next hash
+        var prev = internal.path(params.prev, {});
+        var next = internal.path(path, { prev: prev.path });
+        var same = prev.path === next.path;
+        if (prev.path && next.path && same) { return; }
+
         // Find matching route
-        var prev  = internal.parse(params.prev, {}).path;
-        var next  = internal.parse(path, { prev: prev });
         var route = dispatch.route(next.path);
         if (!route) { return dispatch.fallback(); }
 
         // Resolve parameters
-        var next_parts  = next.path.split('/');
-        var route_parts = route.path.split('/');
-        for (var i = 0; i < route_parts.length; i++) {
-            if (route_parts[i].charAt(0).match(/:|\*/)) {
-                next[route_parts[i].substring(1)] = next_parts[i] || undefined;
+        var vals = next.path.split('/');
+        var keys = route.path.split('/');
+        for (var i = 0; i < keys.length; i++) {
+            if (keys[i].charAt(0).match(/:|\*/)) {
+                next[keys[i].substring(1)] = vals[i] || undefined;
             }
         }
 
@@ -134,7 +195,7 @@
     dispatch.route = function(x) {
         var route = routes[names[x] || paths[x] || handlers[x] || x];
         if (route) { return route; }
-        var parsed = internal.parse(x, {}).path;
+        var parsed = internal.path(x, {}).path;
         for (var p in routes) {
             if (routes.hasOwnProperty(p) && routes[p] && routes[p].matcher.test(parsed)) {
                 return routes[p];
@@ -145,10 +206,12 @@
     /*
      * @internal Parse an input path.
      */
-    internal.parse = function(input, params) {
+    internal.path = function(input, params) {
         params.path = (input || '')
             .replace(queryMatch, '')
-            .replace(prefixMatch, '');
+            .replace(prefixMatch, '')
+            .replace(endMatch, '')
+            .replace(spaceMatch, '');
         params.path = decodeURIComponent(params.path);
         return params;
     };
@@ -168,11 +231,17 @@
     };
 
     /*
-     * Listen on the hash change event to trigger routes, 
+     * Set to skip the next change event.
+     */
+    internal.skipNextChange = false;
+
+    /*
+     * Listen on the hash change event to trigger routes,
      * with setInterval fallback for older browsers.
      */
     var prev, next, change = function(event) {
-        dispatch.run(event.newURL, { prev: event.oldURL });
+        if (internal.skipNextChange) internal.skipNextChange = false;
+        else dispatch.run(event.newURL, { prev: event.oldURL });
     };
     if (!('onhashchange' in window)) {
         prev = window.location.href;
@@ -192,7 +261,7 @@
         window.attachEvent('onhashchange', change);
     }
 
-    /* 
+    /*
      * Initialize internal state.
      */
     dispatch.reset();

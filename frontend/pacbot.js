@@ -36,7 +36,7 @@ exports.config = function(pacbot) {
             'assets/components/dispatch/dispatch.js',
             'assets/components/scene.js/scene.js',
             'assets/components/js-md5/js/md5.js',
-            'assets/components/jquery/jquery.js',
+            'assets/components/jquery/dist/jquery.js',
             'assets/components/jquery.cookie/jquery.cookie.js',
             'assets/js/main.js',
             'assets/js'

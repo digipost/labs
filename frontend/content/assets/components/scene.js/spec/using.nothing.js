@@ -14,6 +14,13 @@ describe('using.nothing.js', function() {
         });
     });
 
+    it('scene() should return the view', function(done) {
+        var view = scene({}, { a: 1 });
+        assert.equal(view.a, 1);
+        assert.ok(view.el);
+        done();
+    });
+
     it('scene() should use natives for XHR', function(done) {
         scene({ template: '/base/spec/templates/2.html' }, {}, function(view) {
             assert.equal(view.el.innerHTML, '<p>1<span>2</span></p>\n');
@@ -72,6 +79,14 @@ describe('using.nothing.js', function() {
                 assert.equal(view.el.innerHTML, '<p><div><span>1</span></div></p>');
                 done();
             });
+        });
+    });
+
+    it('view.set should return the view', function(done) {
+        scene({ template: '<p></p>' }, {}, function(view) {
+            var subview = view.set('p', { template: '<span>1</span>' });
+            assert.ok(subview.el);
+            done();
         });
     });
 

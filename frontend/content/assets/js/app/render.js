@@ -56,9 +56,7 @@ dp.render.notification = function(text) {
 dp.render.go = function(loc) {
     var current = window.location.hash.split('?')[0];
     var target  = loc || current;
-    var timestamp = '?_=' + (new Date()).getTime();
-    if (target === current) target += timestamp;
-    window.location.hash = target;
+    dispatch.go(target);
 };
 
 /*

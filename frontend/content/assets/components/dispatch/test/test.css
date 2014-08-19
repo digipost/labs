@@ -14,7 +14,7 @@ body {
 
 div, nav {
     display: inline-block;
-    padding:1em;
+    padding:.5em;
     margin:0 .5em .5em 0;
     border-radius: .5em;
     background: #eee;
