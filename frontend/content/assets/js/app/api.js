@@ -30,7 +30,7 @@ dp.api.type = function(options) {
 dp.api.search = function(options) {
     return dp.api.request({
         type: 'get',
-        url: '/api/search?query=' + encodeURIComponent(options.query)
+        url: '/api/search?query=' + encodeURIComponent(dp.format.hyphenToSpace(options.query))
     });
 };
 

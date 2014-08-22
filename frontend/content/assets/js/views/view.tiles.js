@@ -28,12 +28,12 @@ dp.views.tiles = {
 
     registerSearch: function(view) {
         if (view.query) {
-            $('.search .inputfield.action-search').val(view.query);
+            $('.search .inputfield.action-search').val(dp.format.hyphenToSpace(view.query));
             $('.action-clear-search').show();
         }
         $('.search form').off('submit').on('submit', function() {
             var input = $('.search .inputfield.action-search');
-            var query = input.val();
+            var query = dp.format.spaceToHyphen(input.val());
             if (query) {
                 input.blur();
                 dp.render.go('!/search/' + query);

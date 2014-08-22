@@ -12,3 +12,11 @@ dp.format.escapeAndFormatLinebreaks = function(str) {
     if (!str) return '';
     return dp.format.paragraphs(_.escape(str));
 };
+
+dp.format.spaceToHyphen = function(str) {
+    return str.replace(/\s/g, '-');
+};
+
+dp.format.hyphenToSpace = function(str) {
+    return str.replace(/\-/g, ' ');
+};
