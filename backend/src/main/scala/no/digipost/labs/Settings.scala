@@ -3,6 +3,7 @@ package no.digipost.labs
 import com.typesafe.config.{ConfigParseOptions, Config, ConfigFactory}
 import java.io.File
 import no.digipost.labs.util.Logging
+import no.digipost.labs.Settings.Proxy
 
 class Settings(val config: Config) {
   val environment = config.getString("environment")
@@ -13,12 +14,20 @@ class Settings(val config: Config) {
   val mongoHost = config.getString("mongo.host")
   val mongoPort = config.getInt("mongo.port")
 
+  val oauthDigipostHost = if(config.hasPath("oauth.digipostHost")) config.getString("oauth.digipostHost") else "www.digipost.no"
   val oauthClientId = config.getString("oauth.clientId")
   val oauthSecret = config.getString("oauth.secret")
   val oauthRedirectUrl = config.getString("oauth.redirectUrl")
-  val oauthAccessTokenUrl = "https://www.digipost.no/post/api/oauth/accesstoken"
   val openIdRedirectUrl = config.getString("openid.redirectUrl")
   val openIdRealm = config.getString("openid.realm")
+
+
+  val proxy = if(config.hasPath("proxy.host") && config.hasPath("proxy.port")) {
+    val host = config.getString("proxy.host")
+    val port = config.getInt("proxy.port")
+    Some(Proxy(host, port))
+  } else None
+
 }
 
 object Settings extends Logging {
@@ -56,4 +65,5 @@ object Settings extends Logging {
     settings
   }
 
+  case class Proxy(host: String, port: Int)
 }

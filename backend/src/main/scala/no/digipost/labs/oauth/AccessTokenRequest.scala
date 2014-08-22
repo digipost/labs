@@ -1,9 +1,10 @@
 package no.digipost.labs.oauth
 
 import com.ning.http.util.Base64
-import no.digipost.labs.oauth.LoginWithDigipost.{RefreshToken, AuthorisationCodeToken, Token}
+import no.digipost.labs.Settings.Proxy
+import no.digipost.labs.oauth.LoginWithDigipost.{AuthorisationCodeToken, RefreshToken, Token}
 
-case class AccessTokenRequest(url: String, parameters: Map[String, String], headers: Map[String, String])
+case class AccessTokenRequest(url: String, parameters: Map[String, String], headers: Map[String, String], proxy: Option[Proxy])
 
 object AccessTokenRequest {
   def apply(token: Token, settings: OAuthSettings, nonce: String): AccessTokenRequest = {
@@ -15,6 +16,6 @@ object AccessTokenRequest {
     }
     val headers = Map("Content-Type" -> "application/x-www-form-urlencoded", "Authorization" -> ("Basic " + authentication))
 
-    AccessTokenRequest(settings.accessTokenUrl, grantParameters, headers)
+    AccessTokenRequest(settings.accessTokenUrl, grantParameters, headers, settings.proxy)
   }
 }

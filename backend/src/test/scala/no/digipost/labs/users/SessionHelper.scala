@@ -1,5 +1,6 @@
 package no.digipost.labs.users
 
+import no.digipost.labs.Settings.Proxy
 import org.scalatest.Assertions
 import org.json4s._
 import org.json4s.jackson.JsonMethods.parse
@@ -52,7 +53,7 @@ object SessionHelper extends Assertions {
   }
 
   val digipostService = new DigipostService {
-    def getBasicUserDetails(uri: String, accessToken: AccessToken): Future[DigipostUser] = {
+    def getBasicUserDetails(uri: String, proxy: Option[Proxy], accessToken: AccessToken): Future[DigipostUser] = {
       val user = if (accessToken.asInstanceOf[TestAccessToken].admin)
         DigipostUser("6e948923eb19443fae21355b99bde581", "Admin Nordmann", "admin@example.com", "admin.nordmann#1234")
       else

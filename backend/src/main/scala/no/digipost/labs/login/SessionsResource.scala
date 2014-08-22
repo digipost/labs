@@ -28,8 +28,9 @@ class SessionsResource(settings: Settings, loginWithDigipost: LoginWithDigipost,
       settings.oauthClientId,
       settings.oauthSecret,
       settings.oauthRedirectUrl,
-      settings.oauthAccessTokenUrl,
-      loginWithDigipost.randomNonce)
+      loginWithDigipost.randomNonce,
+      settings.oauthDigipostHost,
+      settings.proxy)
     session.put(SETTINGS_KEY, oauthSettings)
     redirect(oauthSettings.authorizeUrl)
   }
