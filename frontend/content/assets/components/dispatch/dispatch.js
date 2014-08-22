@@ -10,7 +10,7 @@
     var escapeString = /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g,
         queryMatch   = /\?([^#]*)?$/,
         prefixMatch  = /^[^#]*#/,
-        spaceMatch   = /\s+/g,
+        spaceMatch   = /(^\s+)|(\s+$)/,
         fragMatch    = /:([^\/]+)/g,
         fragReplace  = '([^\\/]+)',
         starMatch    = /\\\*([^\/]+)/g,

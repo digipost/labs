@@ -31,7 +31,7 @@ dp.views.tiles = {
             $('.search .inputfield.action-search').val(view.query);
             $('.action-clear-search').show();
         }
-        $('.search form').on('submit', $.stop).on('submit', function() {
+        $('.search form').off('submit').on('submit', function() {
             var input = $('.search .inputfield.action-search');
             var query = input.val();
             if (query) {
@@ -39,12 +39,12 @@ dp.views.tiles = {
                 dp.render.go('!/search/' + query);
             }
         });
-        $('.action-clear-search').on('click', $.stop).on('click', function() {
+        $('.action-clear-search').off('click').on('click', function() {
             $('.search .inputfield.action-search').val('');
             $(this).hide();
             dp.render.go('!/');
         });
-        $('.search .inputfield.action-search').on('keyup', function() {
+        $('.search .inputfield.action-search').off('keyup').on('keyup', function() {
             if ($(this).val()) {
                 $('.action-clear-search').show();
             }
