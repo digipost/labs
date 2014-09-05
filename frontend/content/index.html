@@ -65,25 +65,26 @@
         <li class="first"><a accesskey="p" href="https://www.digipost.no">Privat</a></li>
         <li class="bedrift"><a accesskey="b" href="https://www.digipost.no/bedrift/">Bedrift</a></li>
         <li class="hjelp last"><a accesskey="?" href="https://www.digipost.no/hjelp/">Hjelp</a></li>
-        <li class="labs active"><a accesskey="?" href="/">Labs</a></li>
+        <li class="labs active"><a accesskey="x" href="/">Labs</a></li>
     </ul>
     <ul>
         <li><a class="session-admin hide" href="#!/admin">Admin</a></li>
-	<li><a class="session-in hide session-name ui-not-min" href="#"></a></li>
+	    <li><a class="session-in hide session-name ui-not-min" href="#">Innlogget som</a></li>
         <li><a class="session-out hide session-login" accesskey="l" href="#">Logg inn i Labs</a></li>
         <li><a class="session-in hide session-logout" href="#" accesskey="u">Logg ut av Labs</a></li>
     </ul>
     <div class="end">
-        <a href="http://www.posten.no"><div class="img img-posten-white">Digipost</div></a>
+        <a href="http://www.posten.no"><div class="img img-posten-white">Posten</div></a>
     </div>
 </div></div>
 
 <div class="tiles container">
     <div class="search">
         <form>
-            <input type="text" class="inputfield action action-search" placeholder="Søk i idéer og blogg…" title="Søk i idéer og blogger. Bruk stikkord.">
-            <button class="icon" type="submit"><i class="fa fa-search"></i></button>
-            <a class="icon icon-clear action action-clear-search hide" href="#"><i class="fa fa-times"></i></a>
+            <label for="search" class="hide">Søk i idéer og blogger</label>
+            <input type="text" id="search" class="inputfield action action-search" placeholder="Søk i idéer og blogg…" title="Søk i idéer og blogger. Bruk stikkord.">
+            <button class="icon" type="submit"><i class="fa fa-search"></i><span class="hide">Utfør søk</span></button>
+            <a class="icon icon-clear action action-clear-search hide" href="#"><i class="fa fa-times"></i><span class="hide">Fjern søkeord</span></a>
         </form>
     </div>
 </div>
