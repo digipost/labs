@@ -42,7 +42,7 @@ dp.views.comments = {
     },
 
     showComments: function(view) {
-        _.each(view.comments, _.partial(view.addCommentWithoutAnimations, view));
+        _.each(view.comments, _.partial(view.addCommentWithoutAnimationsOnLoad, view));
     },
 
     addComment: function(view, comment) {
@@ -52,9 +52,9 @@ dp.views.comments = {
         });
     },
 
-    addCommentWithoutAnimations: function(view, comment) {
+    addCommentWithoutAnimationsOnLoad: function(view, comment) {
         scene(dp.views.comment, { item: view.item, comment: comment }, function(commentview) {
-            view.$('.comments-list').prepend(commentview.el);
+            view.$('.comments-list').append(commentview.el);
         });
     },
 
