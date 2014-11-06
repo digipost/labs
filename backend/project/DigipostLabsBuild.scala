@@ -23,7 +23,7 @@ object DigipostLabsBuild extends Build {
     "org.json4s"              %% "json4s-ext"         % Json4SVersion,
     "org.json4s"              %% "json4s-mongo"       % Json4SVersion exclude("org.mongodb", "mongo-java-driver"),
     "net.databinder.dispatch" %% "dispatch-core"      % "0.11.2",
-    "org.mongodb"             %% "casbah"             % "2.7.3",
+    "org.mongodb"             %% "casbah"             % "2.7.4",
     "org.pegdown"              % "pegdown"            % "1.4.1",
     "ch.qos.logback"           % "logback-classic"    % "1.1.2",
     "org.slf4j"                % "jcl-over-slf4j"     % "1.7.7",
