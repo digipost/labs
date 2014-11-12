@@ -54,7 +54,7 @@ Install and run MongoDB:
     $ sudo apt-get install mongodb
     $ sudo mkdir -p /data/db
     $ sudo chown $USER /data/db
-    $ mongod --setParameter textSearchEnabled=true
+    $ mongod
 
 Start the mongo shell and create the required collections:
 
