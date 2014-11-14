@@ -11,8 +11,7 @@ object DigipostLabsBuild extends Build {
   val ScalaVersion = "2.11.4"
   val ScalatraVersion = "2.3.0"
   val Json4SVersion = "3.2.11"
-  val JettyVersion = "9.2.4.v20141103"
-  val JettyNosqlPatchedVersion = "9.2.4.vdigipost"
+  val JettyVersion = "9.2.5.v20141112"
 
   // %% means scala lib compiled for scala major version x.xx
   //  % means java lib or lib not compiled for a specific scala version
@@ -29,7 +28,7 @@ object DigipostLabsBuild extends Build {
     "ch.qos.logback"           % "logback-classic"    % "1.1.2",
     "org.slf4j"                % "jcl-over-slf4j"     % "1.7.7",
     "org.eclipse.jetty"        % "jetty-webapp"       % JettyVersion,
-    "org.eclipse.jetty"        % "jetty-nosql"        % JettyNosqlPatchedVersion exclude("org.mongodb", "mongo-java-driver"),
+    "org.eclipse.jetty"        % "jetty-nosql"        % JettyVersion exclude("org.mongodb", "mongo-java-driver"),
     "org.eclipse.jetty"        % "jetty-servlet"      % JettyVersion % "provided;test",
     "org.openid4java"          % "openid4java"        % "0.9.7",
     "com.typesafe"             % "config"             % "1.2.1"
