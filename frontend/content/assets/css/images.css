@@ -15,10 +15,10 @@
 }
 
 .img-digipost-white {
-  background-image: url("/assets/images/icons/digipost.png");
-  width: 125px;
-  height: 30px;
-  background-size: 125px 30px;
+  background-image: url("/assets/images/icons/digipost-new.png");
+  width: 107px;
+  height: 28px;
+  background-size: 107px 28px;
 }
 
 .img-posten-white {
@@ -48,7 +48,7 @@ only screen and ( min-resolution: 192dpi),
 only screen and ( min-resolution: 2dppx) {
 
   .img-digipost-white {
-    background-image: url("/assets/images/icons/digipost-2x.png");
+    background-image: url("/assets/images/icons/digipost-new-2x.png");
   }
 
   .img-posten-white {
