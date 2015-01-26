@@ -19,6 +19,7 @@ $(function() {
     dp.env.init();
     dp.session.init();
     dp.scroll.init();
+    dp.ui.init();
     dp.session.refreshUser().always(function () {
         dispatch.start('#!/');
     });
