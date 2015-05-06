@@ -7,8 +7,8 @@ dp.session = {
  */
 dp.session.init = function() {
     $('body').on('click', 'a.session-login', function(event) {
-        dp.views.authchoice.show();
         event.preventDefault();
+        dp.session.loginWithDigipost();
     });
     $('body').on('click', 'a.session-logout', function(event) {
         dp.session.logout();
