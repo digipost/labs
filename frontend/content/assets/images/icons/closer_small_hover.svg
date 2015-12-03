@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Small close icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Ikke-tilgjengelig-melding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Ikke-tilgjengelig-meldingen" sketch:type="MSArtboardGroup" transform="translate(-914.000000, -196.000000)" fill="#717074">
+            <g id="Lightbox" sketch:type="MSLayerGroup" transform="translate(363.000000, 167.000000)">
+                <path d="M561,36.9796949 L553.551372,29.5310672 C553.162147,29.1418415 552.527596,29.1400061 552.137349,29.5302531 L551.530253,30.1373488 C551.139321,30.5282809 551.140371,31.1606757 551.531067,31.5513723 L558.979695,39 L551.531067,46.4486277 C551.141842,46.8378534 551.140006,47.4724042 551.530253,47.8626512 L552.137349,48.4697469 C552.528281,48.8606789 553.160676,48.8596294 553.551372,48.4689328 L561,41.0203051 L568.448628,48.4689328 C568.837853,48.8581585 569.472404,48.8599939 569.862651,48.4697469 L570.469747,47.8626512 C570.860679,47.4717191 570.859629,46.8393243 570.468933,46.4486277 L563.020305,39 L570.468933,31.5513723 C570.858158,31.1621466 570.859994,30.5275958 570.469747,30.1373488 L569.862651,29.5302531 C569.471719,29.1393211 568.839324,29.1403706 568.448628,29.5310672 L561,36.9796949 Z" id="Small-close-icon" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

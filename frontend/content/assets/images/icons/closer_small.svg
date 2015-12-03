@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Lukk ikon liten</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Ikke-tilgjengelig-melding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Ikke-tilgjengelig-meldingen" sketch:type="MSArtboardGroup" transform="translate(-914.000000, -196.000000)" fill="#BFC0C4">
+            <g id="Lightbox" sketch:type="MSLayerGroup" transform="translate(363.000000, 167.000000)">
+                <g id="Close-icon-hvit" transform="translate(551.000000, 29.000000)" sketch:type="MSShapeGroup">
+                    <path d="M10,7.97969491 L2.55137231,0.531067219 C2.16214663,0.141841536 1.52759584,0.140006131 1.13734885,0.53025312 L0.53025312,1.13734885 C0.13932111,1.52828086 0.140370616,2.1606757 0.531067219,2.55137231 L7.97969491,10 L0.531067219,17.4486277 C0.141841536,17.8378534 0.140006131,18.4724042 0.53025312,18.8626512 L1.13734885,19.4697469 C1.52828086,19.8606789 2.1606757,19.8596294 2.55137231,19.4689328 L10,12.0203051 L17.4486277,19.4689328 C17.8378534,19.8581585 18.4724042,19.8599939 18.8626512,19.4697469 L19.4697469,18.8626512 C19.8606789,18.4717191 19.8596294,17.8393243 19.4689328,17.4486277 L12.0203051,10 L19.4689328,2.55137231 C19.8581585,2.16214663 19.8599939,1.52759584 19.4697469,1.13734885 L18.8626512,0.53025312 C18.4717191,0.13932111 17.8393243,0.140370616 17.4486277,0.531067219 L10,7.97969491 Z" id="Lukk-ikon-liten"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

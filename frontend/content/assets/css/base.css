@@ -249,3 +249,17 @@ iframe {
     width: 100%;
     height: 360px;
 }
+
+.foundry {
+    font-family: FoundryMonolineRegular, Arial, sans-serif;
+    font-weight: 100;
+}
+
+.foundrymedium {
+    font-family: FoundryMonolineMedium, Arial, sans-serif;
+    font-weight: 500;
+}
+
+.whitetext {
+    color: #fff;
+}

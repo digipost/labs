@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Close icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Steg-1---Legg-til-fysiske-adresser" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Steg-1---Fysiske-adresser-lightbox" sketch:type="MSArtboardGroup" transform="translate(-1057.000000, -179.000000)" fill="#717074">
+            <path d="M1070.61935,191.180961 L1059.36289,179.924496 C1058.97568,179.537286 1058.34296,179.535162 1057.95401,179.924105 L1057.44193,180.436188 C1057.05483,180.823288 1057.05316,181.455907 1057.44232,181.845066 L1068.69879,193.10153 L1057.44232,204.357995 C1057.05511,204.745205 1057.05299,205.37793 1057.44193,205.766873 L1057.95401,206.278955 C1058.34111,206.666056 1058.97373,206.667723 1059.36289,206.278565 L1070.61935,195.0221 L1081.87582,206.278565 C1082.26303,206.665774 1082.89575,206.667898 1083.2847,206.278955 L1083.79678,205.766873 C1084.18388,205.379772 1084.18555,204.747154 1083.79639,204.357995 L1072.53992,193.10153 L1083.79639,181.845066 C1084.1836,181.457856 1084.18572,180.825131 1083.79678,180.436188 L1083.2847,179.924105 C1082.8976,179.537005 1082.26498,179.535337 1081.87582,179.924496 L1070.61935,191.180961 Z" id="Close-icon" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

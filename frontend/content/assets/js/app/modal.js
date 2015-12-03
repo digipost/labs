@@ -46,6 +46,9 @@ dp.modal.create = function(options, content, callback) {
     dp.modal.addClosers(msg, wrap, closer, options);
     dp.modal.addClasses(wrap, options);
     dp.modal.addCss(msg, options);
+    if(options.keyboardClose) {
+        dp.modal.bindKeys(closer, options);
+    }
     $('body').append($(wrap).html(msg).show());
 
     dp.modal.addFocus();
@@ -113,6 +116,9 @@ dp.modal.buttons = function(options) {
  * Add appropriate CSS based on current UI dimensions.
  */
 dp.modal.addCss = function(msg, options) {
+    if(options.fullscreen) {
+        return;
+    }
     var windowWith = $(window).width();
     var minimumSize = windowWith < options.width;
     if(!minimumSize) {
@@ -139,6 +145,7 @@ dp.modal.addClasses = function(wrap, options) {
     if (!options.header)  wrap.addClass('nohead');
     if (!options.content) wrap.addClass('nocontent');
     if (!options.buttons) wrap.addClass('nobuttons');
+    if (options.fullscreen) wrap.addClass('fullscreen');
     if (options.bg === false) wrap.addClass('nobg');
     wrap.addClass(options.classes);
 };
@@ -167,9 +174,21 @@ dp.modal.addFocus = function() {
  * Center modal on screen.
  */
 dp.modal.updatePosition = function() {
-    var modal = $('#modal');
-    modal.css({
-        marginTop: - modal.outerHeight(false) / 2
+
+    if (dp.ui.med) $('#modal').css({
+        marginTop: 100,
+        top: 0
+    });
+
+    $('#modal').scrollTop(0);
+};
+
+/*
+ * Add keyboard shortcuts to modal.
+ */
+dp.modal.bindKeys = function(closer) {
+    $(document).one('keyup', function(event) {
+        if (event.keyCode === 27 || event.keyCode === 13) closer(event);
     });
 };
 
@@ -177,15 +196,17 @@ dp.modal.updatePosition = function() {
  * Add closing methods to modal.
  */
 dp.modal.addClosers = function(msg, wrap, closer, options) {
-    var icon = $('<i>').addClass('fa fa-times');
-    var cross = $('<a>').addClass('closer').append(icon)
+    var cross = $('<button>').addClass('closer')
         .attr('aria-label', 'Lukk').on('click', closer);
     if (options.closer) msg.append(cross);
-    msg.on('click', function(e) { e.stopPropagation(); });
+    if( options.clickAnywhereToClose ) {
+        if (options.butNotOn) {
+           $(msg).find(options.butNotOn).on('click', function(e){ e.stopPropagation(); });
+        }
+    } else {
+        msg.on('click', function(e) { e.stopPropagation(); });
+    }
     wrap.find('.closer').on('click', closer);
     wrap.on('click', closer);
-    $(msg).find('.modal-close').on('click', function(event) {
-        dp.modal.close();
-        event.preventDefault();
-    });
+    $(msg).find('.modal-close').on('click', closer);
 };

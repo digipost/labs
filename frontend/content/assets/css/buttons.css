@@ -4,74 +4,76 @@
   overflow: visible;
   width: auto;
   zoom: 1;
-  padding: 6px 11px 5px 13px;
+  padding: 7px 20px 8px 20px;
   margin: 0 5px 5px 0;
+  border-radius: 0;
   text-decoration: none;
   text-shadow: none;
   white-space: nowrap;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: -.01em;
+  font-family: 'FoundryMonolineRegular',Arial,Helvetica,sans-serif;
   line-height: 1.5;
   color: #fff;
   border: none;
-  border-radius: 3px;
   -webkit-transition: background 50ms ease-in-out;
   -moz-transition: background 50ms ease-in-out;
   -ms-transition: background 50ms ease-in-out;
   -o-transition: background 50ms ease-in-out;
-  transition: background 50ms ease-in-out;
-  background: #56B4EF;
-  border-bottom: 2px solid #228fd3;
+  transition: all 0.2 ease-in-out;
+  background: #e32d22;
 }
 
 #digipost .button:hover,
 #digipost .button:focus {
-  background: #46a5e0;
-  border-bottom-color: #0085c7;
+  border-bottom-color: #900;
   text-decoration: none;
   cursor: pointer;
   color: #fff;
+  background-color: #FA2D16;
+  outline: none;
+  backface-visibility: hidden;
 }
 
 #digipost .button:active {
-  background: #0085c7;
+  background: #c00;
   color: #fff;
 }
 
 /* ------------------------------------------------------------ */
 
 #digipost .button.button2 {
-  background: #e32d22;
-  border-bottom-color: #a00;
+  background: #FA2D16;
+  color: #fff;
 }
 
 #digipost .button.button2:hover,
 #digipost .button.button2:focus {
-  background: #d00;
-  border-bottom-color: #900;
+  background: #FA2D16;
+  color: white;
 }
 
 #digipost .button.button2:active {
-  background: #a00;
+  background: #c00;
 }
 
 /* ------------------------------------------------------------ */
 
 #digipost .button.button3 {
-  background: #eceef1;
-  color: #0067dc;
-  font-weight: normal;
-  border-color: #dde1e6;
+  background: transparent;
+  color: #4D4F53;
+  border: 2px solid #bfc0c4;
 }
 
 #digipost .button.button3:hover,
 #digipost .button.button3:focus {
-  background: #dde1e6;
-  border-bottom-color: #ced4db;
+  background: #757477;
+  border: 2px solid #757477;
+  color: white;
 }
 
 #digipost .button.button3:active {
-  background: #ced4db;
+  background: #757477;
 }
 
 /* ------------------------------------------------------------ */
