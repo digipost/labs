@@ -38,7 +38,7 @@ dp.track.event = function(category, action, label) {
  * Add GA tracking code on load.
  */
 window._gaq = window._gaq || [];
-window._gaq.push(['_setAccount', 'UA-45636912-1']);
+window._gaq.push(['_setAccount', 'UA-20592293-1']);
 window._gaq.push(['_setDomainName', 'auto']);
 window._gaq.push (['_gat._anonymizeIp']);
 
