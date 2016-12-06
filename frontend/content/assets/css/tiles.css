@@ -139,7 +139,11 @@ a.tile:hover {
   left: 60px;
   font-size: 1.1em;
   font-weight: 200;
-  width: 12.5em;
+  width: 11.5em;
+}
+
+.tile .author.author-news {
+    width: 13.5em;
 }
 
 .tile .author-tweet {
