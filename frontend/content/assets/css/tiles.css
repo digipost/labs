@@ -142,6 +142,10 @@ a.tile:hover {
   width: 11.5em;
 }
 
+.tile .author.author-news {
+    width: 13.5em;
+}
+
 .tile .author-tweet {
   left: 33px;
 }
