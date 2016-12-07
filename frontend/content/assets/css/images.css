@@ -14,15 +14,15 @@
   background-size: cover;
 }
 
-.img-digipost-white {
-  background-image: url("/assets/images/icons/digipost-new.png");
+.img-digipost-colour {
+  background-image: url("/assets/images/icons/digipost_logo_farge.svg");
   width: 107px;
   height: 28px;
   background-size: 107px 28px;
 }
 
-.img-posten-white {
-  background-image: url("/assets/images/icons/posten.png");
+.img-posten-colour {
+  background-image: url("/assets/images/icons/posten_logo_farge.svg");
   width: 100px;
   height: 31px;
   background-size: 100px 31px;
@@ -47,12 +47,12 @@ only screen and ( min-device-pixel-ratio: 2),
 only screen and ( min-resolution: 192dpi),
 only screen and ( min-resolution: 2dppx) {
 
-  .img-digipost-white {
-    background-image: url("/assets/images/icons/digipost-new-2x.png");
+  .img-digipost-colour {
+    background-image: url("/assets/images/icons/digipost_logo_farge.svg");
   }
 
-  .img-posten-white {
-    background-image: url("/assets/images/icons/posten-2x.png");
+  .img-posten-colour {
+    background-image: url("/assets/images/icons/posten_logo_farge.svg");
   }
 
   .img-fjell {

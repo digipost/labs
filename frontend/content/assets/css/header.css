@@ -10,7 +10,7 @@
 #header {
   height: 56px;
   overflow: hidden;
-  background: #E32D22;
+  background: #fff;
   width: 100%;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@
 
 #header ul a {
   text-transform: uppercase;
-  color: #fff;
+  color: #323538;
   font-size: 15px;
   font-weight: bold;
   padding: 17px 15px;
@@ -112,14 +112,14 @@
 
 #header ul a:hover,
 #header li.active a {
-  border-color: #fff;
+  border-color: #fa2d16;
 }
 
 #header ul a:active,
 #header ul a:focus,
 #header li.active a:active,
 #header li.active a:focus {
-  border-color: #fff;
+  border-color: #fa2d16;
   outline: none;
 }
 
@@ -202,7 +202,7 @@
 .mobilemenu a {
   display: block;
   font-size: 2em;
-  color: #fefdfd;
+  color: #4d4f53;
   border-bottom: none;
   margin: 1em 1em 1em 2em;
   letter-spacing: -.04em;
@@ -242,14 +242,14 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.0);
   -webkit-transition: background-color .5s ease;
-  -moz-transition: background-color .5s ease
+  -moz-transition: background-color .5s ease;
   -o-transition: background-color .5s ease;
   transition: background-color .5s ease;
 }
 .mobilemenu-background.active {
   background-color: rgba(0, 0, 0, 0.7);
   -webkit-transition: background-color .25s ease;
-  -moz-transition: background-color .25s ease
+  -moz-transition: background-color .25s ease;
   -o-transition: background-color .25s ease;
   transition: background-color .25s ease;
 }
