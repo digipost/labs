@@ -49,7 +49,7 @@ exports.config = function(pacbot) {
 
     // Remove ".html" from most filenames in build mode.
     pacbot.filter.set('target', 'html', function(file) {
-        if (file.indexOf('index.html') === -1 && file.indexOf('404.html') === -1) {
+        if (file.indexOf('index.html') === -1 && file.indexOf('404.html') === -1 && file.indexOf('google5a29ea4b2be59a32.html') === -1) {
             return file.replace(/\.html$/, '');
         }
         return file;
